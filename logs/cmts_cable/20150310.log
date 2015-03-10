@@ -1,0 +1,728 @@
+Destroying... 
+10/03 17:03:41 CableModemThread started
+Prepare db datasource ... time: 1425981821870
+Load all cmts entry - time: 1425981821895
+Load all cable modem for caching! - Time: 1425981821916
+Start process cmts 'uBR-7246-HD01' - time: 1425981822315
+Start process cmts 'uBR10k-TC' - time: 1425981822316
+Start process cmts 'uBR-72-TN' - time: 1425981822317
+Start process cmts 'uBR-72-DT02' - time: 1425981822317
+Start process cmts 'uBR-7246-HD02' - time: 1425981822318
+Start process cmts 'uBR10K-NCT01' - time: 1425981822319
+Start process cmts 'uBR-72-DT01' - time: 1425981822319
+Start process cmts 'uBR10K-NCT02' - time: 1425981822320
+Start process cmts 'uBR-72-DT3' - time: 1425981822321
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425981828322
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425981828330
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425981828342
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425981828342
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425981828342
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425981828342
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425981828346
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425981828346
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425981828347
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425981828347
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425981828347
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425981828347
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425981828348
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425981828464
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425981828465
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425981828467
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425981828475
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425981828476
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425981864871
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425981865435
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425981865694
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425981875158
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425981875978
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425981877202
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425981979550
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425981981056
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425981981812
+Destroying... 
+10/03 17:09:12 CableModemThread started
+Prepare db datasource ... time: 1425982152787
+Load all cmts entry - time: 1425982152989
+Load all cable modem for caching! - Time: 1425982153379
+Start process cmts 'uBR-7246-HD01' - time: 1425982153922
+Start process cmts 'uBR10k-TC' - time: 1425982153971
+Start process cmts 'uBR-72-TN' - time: 1425982153974
+Start process cmts 'uBR-72-DT02' - time: 1425982153977
+Start process cmts 'uBR-7246-HD02' - time: 1425982153979
+Start process cmts 'uBR10K-NCT01' - time: 1425982153980
+Start process cmts 'uBR-72-DT01' - time: 1425982153982
+Start process cmts 'uBR10K-NCT02' - time: 1425982153984
+Start process cmts 'uBR-72-DT3' - time: 1425982153986
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982160015
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425982160016
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982160016
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982160015
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982160030
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425982160037
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425982160039
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425982160040
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425982160040
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425982160041
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982160041
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982160046
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425982160046
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982160046
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982160047
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425982160047
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425982160049
+Load all cmts entry - time: 1425982454028
+Load all cable modem for caching! - Time: 1425982454031
+Start process cmts 'uBR-7246-HD01' - time: 1425982454324
+Start process cmts 'uBR10k-TC' - time: 1425982454325
+Start process cmts 'uBR-72-TN' - time: 1425982454327
+Start process cmts 'uBR-72-DT02' - time: 1425982454330
+Start process cmts 'uBR-7246-HD02' - time: 1425982454332
+Start process cmts 'uBR10K-NCT01' - time: 1425982454333
+Start process cmts 'uBR-72-DT01' - time: 1425982454334
+Start process cmts 'uBR10K-NCT02' - time: 1425982454336
+Start process cmts 'uBR-72-DT3' - time: 1425982454338
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425982460335
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982460337
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982460337
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425982460338
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425982460338
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982460340
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425982460340
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982460341
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425982460342
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425982460341
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425982460343
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982460347
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982460347
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982461156
+Error when trying insert CableModemHistories for cmts 'uBR-7246-HD01'. Check log for detail - ErrorMessage: Duplicate entry 'cc:03:fa:a4:e7:3e-2015-03-10 17:14:22' for key 'PRIMARY'
+Error when trying insert CableModemHistories for cmts 'uBR-7246-HD02'. Check log for detail - ErrorMessage: Duplicate entry 'cc:03:fa:a4:e8:de-2015-03-10 17:14:21' for key 'PRIMARY'
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982464644
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982466126
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982468300
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982469642
+Error when trying insert CableModemHistories for cmts 'uBR-72-DT02'. Check log for detail - ErrorMessage: Duplicate entry 'cc:03:fa:a4:da:76-2015-03-10 17:14:21' for key 'PRIMARY'
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425982472469
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982472654
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425982483447
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425982509126
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425982512849
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425982513894
+Destroying... 
+10/03 17:15:46 CableModemThread started
+Prepare db datasource ... time: 1425982547002
+Load all cmts entry - time: 1425982547215
+Load all cable modem for caching! - Time: 1425982547595
+Start process cmts 'uBR-7246-HD01' - time: 1425982548200
+Start process cmts 'uBR10k-TC' - time: 1425982548241
+Start process cmts 'uBR-72-TN' - time: 1425982548243
+Start process cmts 'uBR-72-DT02' - time: 1425982548246
+Start process cmts 'uBR-7246-HD02' - time: 1425982548251
+Start process cmts 'uBR10K-NCT01' - time: 1425982548252
+Start process cmts 'uBR-72-DT01' - time: 1425982548254
+Start process cmts 'uBR10K-NCT02' - time: 1425982548255
+Start process cmts 'uBR-72-DT3' - time: 1425982548256
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425982554262
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982554262
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982554262
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425982554264
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982554278
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425982554291
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982554291
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425982554294
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982554309
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425982554310
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425982554326
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425982554336
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982554358
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425982555274
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982555275
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982557204
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425982566171
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425982566173
+Error when trying insert CableModemHistories for cmts 'uBR-72-TN'. Check log for detail - ErrorMessage: Duplicate entry '00:0e:b7:00:06:81-2015-03-10 17:16:09' for key 'PRIMARY'
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982615133
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425982616158
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982625362
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425982645620
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425982654578
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425982654579
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425982660753
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425982667184
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425982668480
+Destroying... 
+10/03 17:20:08 CableModemThread started
+Prepare db datasource ... time: 1425982808156
+Load all cmts entry - time: 1425982808328
+Load all cable modem for caching! - Time: 1425982808648
+Start process cmts 'uBR-7246-HD01' - time: 1425982809086
+Start process cmts 'uBR10k-TC' - time: 1425982809120
+Start process cmts 'uBR-72-TN' - time: 1425982809121
+Start process cmts 'uBR-72-DT02' - time: 1425982809122
+Start process cmts 'uBR-7246-HD02' - time: 1425982809123
+Start process cmts 'uBR10K-NCT01' - time: 1425982809124
+Start process cmts 'uBR-72-DT01' - time: 1425982809124
+Start process cmts 'uBR10K-NCT02' - time: 1425982809125
+Start process cmts 'uBR-72-DT3' - time: 1425982809126
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982815137
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982815138
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425982815151
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982815151
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982815157
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425982815169
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425982815170
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425982815171
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425982815172
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425982815172
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425982815172
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425982815174
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425982815175
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425982815181
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425982823627
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425982823629
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425982823661
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982836466
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425982846419
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425982851974
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425982855441
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425982855775
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425982860238
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425982922830
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425982925784
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425982928924
+Load all cmts entry - time: 1425983109164
+Load all cable modem for caching! - Time: 1425983109166
+Start process cmts 'uBR-7246-HD01' - time: 1425983109393
+Start process cmts 'uBR10k-TC' - time: 1425983109394
+Start process cmts 'uBR-72-TN' - time: 1425983109394
+Start process cmts 'uBR-72-DT02' - time: 1425983109394
+Start process cmts 'uBR-7246-HD02' - time: 1425983109395
+Start process cmts 'uBR10K-NCT01' - time: 1425983109395
+Start process cmts 'uBR-72-DT01' - time: 1425983109395
+Start process cmts 'uBR10K-NCT02' - time: 1425983109396
+Start process cmts 'uBR-72-DT3' - time: 1425983109396
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425983115397
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983115397
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983115399
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425983115400
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425983115402
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983115399
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425983115400
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983115400
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425983115400
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425983115407
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983115407
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983115407
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425983115407
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983115408
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983115408
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425983118398
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425983118399
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425983123371
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983142096
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425983150848
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983155611
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983158470
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425983167859
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983167860
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425983210907
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425983213639
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425983216992
+10/03 17:27:28 CableModemThread stopped
+Destroying... 
+10/03 17:27:30 CableModemThread started
+Load all cmts entry - time: 1425983250237
+Load all cable modem for caching! - Time: 1425983250280
+Start process cmts 'uBR-7246-HD01' - time: 1425983250281
+Start process cmts 'uBR10k-TC' - time: 1425983250282
+Start process cmts 'uBR-72-TN' - time: 1425983250283
+Start process cmts 'uBR-72-DT02' - time: 1425983250283
+Start process cmts 'uBR-7246-HD02' - time: 1425983250283
+Start process cmts 'uBR10K-NCT01' - time: 1425983250283
+Start process cmts 'uBR-72-DT01' - time: 1425983250284
+Start process cmts 'uBR10K-NCT02' - time: 1425983250284
+Start process cmts 'uBR-72-DT3' - time: 1425983250284
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983256294
+
+2
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425983256312
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983256312
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425983256312
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983256312
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425983256333
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425983256334
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983256333
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983256335
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425983256335
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983256337
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983261243
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425983261329
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425983261330
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425983269697
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983269698
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983271685
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425983271686
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983271688
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983304215
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425983310261
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983310273
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425983368340
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425983370160
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425983370161
+Load all cmts entry - time: 1425983550320
+Load all cable modem for caching! - Time: 1425983550322
+Start process cmts 'uBR-7246-HD01' - time: 1425983550400
+Start process cmts 'uBR10k-TC' - time: 1425983550401
+Start process cmts 'uBR-72-TN' - time: 1425983550402
+Start process cmts 'uBR-72-DT02' - time: 1425983550402
+Start process cmts 'uBR-7246-HD02' - time: 1425983550402
+Start process cmts 'uBR10K-NCT01' - time: 1425983550402
+Start process cmts 'uBR-72-DT01' - time: 1425983550403
+Start process cmts 'uBR10K-NCT02' - time: 1425983550403
+Start process cmts 'uBR-72-DT3' - time: 1425983550403
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425983556402
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983556403
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983556405
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983556405
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983556408
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425983556406
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425983556412
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425983556413
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425983556412
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983556415
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983556415
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425983556426
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425983556459
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425983557527
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983557544
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983559306
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983563959
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425983564242
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425983568440
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425983570285
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983574647
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983592961
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425983599214
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983599214
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425983668540
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425983671819
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425983672775
+Load all cmts entry - time: 1425983850450
+Load all cable modem for caching! - Time: 1425983850452
+Start process cmts 'uBR-7246-HD01' - time: 1425983850505
+Start process cmts 'uBR10k-TC' - time: 1425983850506
+Start process cmts 'uBR-72-TN' - time: 1425983850506
+Start process cmts 'uBR-72-DT02' - time: 1425983850507
+Start process cmts 'uBR-7246-HD02' - time: 1425983850507
+Start process cmts 'uBR10K-NCT01' - time: 1425983850507
+Start process cmts 'uBR-72-DT01' - time: 1425983850508
+Start process cmts 'uBR10K-NCT02' - time: 1425983850508
+Start process cmts 'uBR-72-DT3' - time: 1425983850508
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425983856508
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983856508
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983856511
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983856511
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983856508
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425983856508
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425983856513
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425983856513
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425983856512
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425983856511
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425983856515
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425983856514
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425983856516
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425983856515
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425983856517
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425983860492
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425983860506
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425983861080
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983903191
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425983905898
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425983910398
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983926699
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425983928641
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425983935846
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984001690
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425984005552
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984009306
+Load all cmts entry - time: 1425984150549
+Load all cable modem for caching! - Time: 1425984150550
+Start process cmts 'uBR-7246-HD01' - time: 1425984150607
+Start process cmts 'uBR10k-TC' - time: 1425984150608
+Start process cmts 'uBR-72-TN' - time: 1425984150609
+Start process cmts 'uBR-72-DT02' - time: 1425984150609
+Start process cmts 'uBR-7246-HD02' - time: 1425984150609
+Start process cmts 'uBR10K-NCT01' - time: 1425984150610
+Start process cmts 'uBR-72-DT01' - time: 1425984150610
+Start process cmts 'uBR10K-NCT02' - time: 1425984150610
+Start process cmts 'uBR-72-DT3' - time: 1425984150610
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425984156612
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425984156616
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425984156616
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425984156616
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425984156617
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425984156617
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425984156616
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425984156617
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425984156620
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425984156621
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425984156630
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425984156636
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425984156655
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425984156827
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425984156827
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425984157007
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425984168462
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425984168802
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425984177375
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425984188528
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425984194064
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425984197286
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425984198298
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425984203081
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984261088
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425984261801
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984262414
+Load all cmts entry - time: 1425984450647
+Load all cable modem for caching! - Time: 1425984450648
+Start process cmts 'uBR-7246-HD01' - time: 1425984450687
+Start process cmts 'uBR10k-TC' - time: 1425984450688
+Start process cmts 'uBR-72-TN' - time: 1425984450689
+Start process cmts 'uBR-72-DT02' - time: 1425984450689
+Start process cmts 'uBR-7246-HD02' - time: 1425984450690
+Start process cmts 'uBR10K-NCT01' - time: 1425984450691
+Start process cmts 'uBR-72-DT01' - time: 1425984450691
+Start process cmts 'uBR10K-NCT02' - time: 1425984450692
+Start process cmts 'uBR-72-DT3' - time: 1425984450692
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425984456693
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425984456693
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425984456696
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425984456693
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425984456693
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425984456693
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425984456698
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425984456698
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425984456698
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425984456697
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425984456700
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425984456699
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425984456699
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425984456701
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425984456700
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425984463336
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425984463343
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425984470454
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425984474786
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425984476788
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425984478371
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425984512902
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425984513693
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425984519807
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984551387
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425984552989
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984554562
+Load all cmts entry - time: 1425984750732
+Load all cable modem for caching! - Time: 1425984750733
+Start process cmts 'uBR-7246-HD01' - time: 1425984750792
+Start process cmts 'uBR10k-TC' - time: 1425984750793
+Start process cmts 'uBR-72-TN' - time: 1425984750793
+Start process cmts 'uBR-72-DT02' - time: 1425984750793
+Start process cmts 'uBR-7246-HD02' - time: 1425984750794
+Start process cmts 'uBR10K-NCT01' - time: 1425984750794
+Start process cmts 'uBR-72-DT01' - time: 1425984750794
+Start process cmts 'uBR10K-NCT02' - time: 1425984750794
+Start process cmts 'uBR-72-DT3' - time: 1425984750795
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425984756797
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425984756801
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425984756803
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425984756803
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425984756803
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425984756804
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425984756804
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425984756804
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425984756805
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425984756806
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425984756806
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425984756809
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425984756809
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425984757499
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425984757518
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425984758295
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425984768431
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425984769266
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425984776862
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425984788494
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425984793315
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425984795873
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425984797390
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425984800124
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984862655
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425984863767
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425984864845
+Load all cmts entry - time: 1425985050832
+Load all cable modem for caching! - Time: 1425985050834
+Start process cmts 'uBR-7246-HD01' - time: 1425985050915
+Start process cmts 'uBR10k-TC' - time: 1425985050916
+Start process cmts 'uBR-72-TN' - time: 1425985050916
+Start process cmts 'uBR-72-DT02' - time: 1425985050917
+Start process cmts 'uBR-7246-HD02' - time: 1425985050918
+Start process cmts 'uBR10K-NCT01' - time: 1425985050918
+Start process cmts 'uBR-72-DT01' - time: 1425985050918
+Start process cmts 'uBR10K-NCT02' - time: 1425985050919
+Start process cmts 'uBR-72-DT3' - time: 1425985050919
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985056920
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985056925
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985056925
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425985056926
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985056930
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985056930
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425985056930
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425985056930
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985056931
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985056931
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985056933
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425985056933
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985056960
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425985056960
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985057083
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425985065148
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985065170
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985068383
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985077129
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425985081748
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425985081838
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425985081849
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425985081860
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985082907
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425985167711
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425985169754
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425985171957
+Load all cmts entry - time: 1425985350958
+Load all cable modem for caching! - Time: 1425985350960
+Start process cmts 'uBR-7246-HD01' - time: 1425985351020
+Start process cmts 'uBR10k-TC' - time: 1425985351021
+Start process cmts 'uBR-72-TN' - time: 1425985351021
+Start process cmts 'uBR-72-DT02' - time: 1425985351021
+Start process cmts 'uBR-7246-HD02' - time: 1425985351022
+Start process cmts 'uBR10K-NCT01' - time: 1425985351022
+Start process cmts 'uBR-72-DT01' - time: 1425985351022
+Start process cmts 'uBR10K-NCT02' - time: 1425985351023
+Start process cmts 'uBR-72-DT3' - time: 1425985351023
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985357025
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985357030
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985357030
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985357036
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985357036
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425985357037
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985357036
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425985357037
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985357049
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425985357055
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425985357062
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985357075
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985357094
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425985359807
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985359862
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985365816
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425985368933
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985373984
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425985374658
+Error when trying insert CableModemHistories for cmts 'uBR-72-TN'. Check log for detail - ErrorMessage: Duplicate entry '00:0e:b7:00:06:81-2015-03-10 18:02:50' for key 'PRIMARY'
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985380120
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985381724
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425985382280
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425985387516
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425985393344
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425985447929
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425985450897
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425985452561
+Load all cmts entry - time: 1425985651060
+Load all cable modem for caching! - Time: 1425985651062
+Start process cmts 'uBR-7246-HD01' - time: 1425985651117
+Start process cmts 'uBR10k-TC' - time: 1425985651118
+Start process cmts 'uBR-72-TN' - time: 1425985651118
+Start process cmts 'uBR-72-DT02' - time: 1425985651118
+Start process cmts 'uBR-7246-HD02' - time: 1425985651119
+Start process cmts 'uBR10K-NCT01' - time: 1425985651119
+Start process cmts 'uBR-72-DT01' - time: 1425985651120
+Start process cmts 'uBR10K-NCT02' - time: 1425985651120
+Start process cmts 'uBR-72-DT3' - time: 1425985651120
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985657121
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985657126
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985657127
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985657127
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985657127
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985657127
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425985657128
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425985657127
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425985657127
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985657129
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425985657128
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985657129
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985657129
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425985657134
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985657147
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425985665794
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985665806
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985666416
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985667538
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425985668566
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985668997
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425985692303
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425985701716
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425985703649
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425985741773
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425985748163
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425985749251
+Load all cmts entry - time: 1425985951161
+Load all cable modem for caching! - Time: 1425985951162
+Start process cmts 'uBR-7246-HD01' - time: 1425985951213
+Start process cmts 'uBR10k-TC' - time: 1425985951213
+Start process cmts 'uBR-72-TN' - time: 1425985951214
+Start process cmts 'uBR-72-DT02' - time: 1425985951214
+Start process cmts 'uBR-7246-HD02' - time: 1425985951214
+Start process cmts 'uBR10K-NCT01' - time: 1425985951214
+Start process cmts 'uBR-72-DT01' - time: 1425985951215
+Start process cmts 'uBR10K-NCT02' - time: 1425985951215
+Start process cmts 'uBR-72-DT3' - time: 1425985951215
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985957219
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985957229
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985957229
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985957229
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985957229
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985957229
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425985957230
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425985957230
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425985957240
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425985962603
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425985968675
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425985968730
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985968824
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425985968877
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425985968886
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425985968886
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425985968887
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425985968918
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425985973401
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425985978847
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425985979232
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986003787
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425986010579
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986015869
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986031145
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425986032126
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986037191
+Load all cmts entry - time: 1425986251267
+Load all cable modem for caching! - Time: 1425986251268
+Start process cmts 'uBR-7246-HD01' - time: 1425986251342
+Start process cmts 'uBR10k-TC' - time: 1425986251343
+Start process cmts 'uBR-72-TN' - time: 1425986251344
+Start process cmts 'uBR-72-DT02' - time: 1425986251344
+Start process cmts 'uBR-7246-HD02' - time: 1425986251345
+Start process cmts 'uBR10K-NCT01' - time: 1425986251345
+Start process cmts 'uBR-72-DT01' - time: 1425986251345
+Start process cmts 'uBR10K-NCT02' - time: 1425986251346
+Start process cmts 'uBR-72-DT3' - time: 1425986251346
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425986257350
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425986257350
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425986257357
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425986257357
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425986257358
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425986257357
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425986257359
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425986257360
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425986257360
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425986257362
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425986257365
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425986257365
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425986257371
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425986257378
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425986257396
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425986264914
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425986264953
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425986265898
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425986266548
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425986268431
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425986269381
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986290258
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425986299677
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986299677
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986367279
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425986371265
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986375298
+Load all cmts entry - time: 1425986551380
+Load all cable modem for caching! - Time: 1425986551381
+Start process cmts 'uBR-7246-HD01' - time: 1425986551422
+Start process cmts 'uBR10k-TC' - time: 1425986551423
+Start process cmts 'uBR-72-TN' - time: 1425986551423
+Start process cmts 'uBR-72-DT02' - time: 1425986551424
+Start process cmts 'uBR-7246-HD02' - time: 1425986551424
+Start process cmts 'uBR10K-NCT01' - time: 1425986551424
+Start process cmts 'uBR-72-DT01' - time: 1425986551424
+Start process cmts 'uBR10K-NCT02' - time: 1425986551425
+Start process cmts 'uBR-72-DT3' - time: 1425986551425
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425986557431
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425986557439
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425986557439
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425986557440
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425986557440
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425986557440
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425986557441
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425986557441
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425986557443
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425986557444
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425986557446
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425986557446
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425986557451
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425986557456
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425986557462
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425986567627
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425986569001
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425986569023
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425986569565
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425986569566
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425986570952
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986591208
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425986601031
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986604169
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986630415
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425986637245
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986642887
+Load all cmts entry - time: 1425986851463
+Load all cable modem for caching! - Time: 1425986851463
+Start process cmts 'uBR-7246-HD01' - time: 1425986851525
+Start process cmts 'uBR10k-TC' - time: 1425986851526
+Start process cmts 'uBR-72-TN' - time: 1425986851526
+Start process cmts 'uBR-72-DT02' - time: 1425986851526
+Start process cmts 'uBR-7246-HD02' - time: 1425986851526
+Start process cmts 'uBR10K-NCT01' - time: 1425986851527
+Start process cmts 'uBR-72-DT01' - time: 1425986851527
+Start process cmts 'uBR10K-NCT02' - time: 1425986851527
+Start process cmts 'uBR-72-DT3' - time: 1425986851528
+Inserting CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425986857533
+Inserting CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425986857540
+Inserting CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425986857540
+Inserting CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425986857540
+Inserting CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425986857540
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD02' - Time: 1425986857541
+Inserting CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425986857540
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT01' - Time: 1425986857542
+Updating CableModem has been finished for cmts 'uBR-72-DT01' - Time: 1425986857542
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT02' - Time: 1425986857541
+Updating CableModem has been finished for cmts 'uBR10K-NCT02' - Time: 1425986857543
+Updating CableModem has been finished for cmts 'uBR-7246-HD02' - Time: 1425986864299
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT3' - Time: 1425986867627
+Inserting CableModemHistory has been finished for cmts 'uBR-72-DT02' - Time: 1425986869733
+Inserting CableModemHistory has been finished for cmts 'uBR10K-NCT01' - Time: 1425986869795
+Updating CableModem has been finished for cmts 'uBR10K-NCT01' - Time: 1425986869910
+Updating CableModem has been finished for cmts 'uBR-72-DT02' - Time: 1425986874100
+Updating CableModem has been finished for cmts 'uBR-72-DT3' - Time: 1425986874974
+Inserting CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986875796
+Inserting CableModemHistory has been finished for cmts 'uBR-72-TN' - Time: 1425986887854
+Updating CableModem has been finished for cmts 'uBR-72-TN' - Time: 1425986888186
+Inserting CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425986889758
+Inserting CableModemHistory has been finished for cmts 'uBR-7246-HD01' - Time: 1425986899113
+Updating CableModem has been finished for cmts 'uBR-7246-HD01' - Time: 1425986901651
+Inserting CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986921047
+Inserting CableModemHistory has been finished for cmts 'uBR10k-TC' - Time: 1425986929031
+Updating CableModem has been finished for cmts 'uBR10k-TC' - Time: 1425986931796

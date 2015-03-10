@@ -1,0 +1,13 @@
+2015-03-10 17:22:40,046 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] UpstreamThread$UpstreamListener - Error when next
+java.lang.NullPointerException
+	at com.cmc.monitor.thread.UpstreamThread.updateUpstreamChannel(UpstreamThread.java:87)
+	at com.cmc.monitor.thread.UpstreamThread$UpstreamListener.next(UpstreamThread.java:402)
+	at org.snmp4j.util.TableUtils$TableRequest.onResponse(TableUtils.java:517)
+	at org.snmp4j.Snmp.processPdu(Snmp.java:1203)
+	at org.snmp4j.MessageDispatcherImpl.fireProcessPdu(MessageDispatcherImpl.java:675)
+	at org.snmp4j.MessageDispatcherImpl.dispatchMessage(MessageDispatcherImpl.java:302)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:373)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:333)
+	at org.snmp4j.transport.AbstractTransportMapping.fireProcessMessage(AbstractTransportMapping.java:76)
+	at org.snmp4j.transport.DefaultUdpTransportMapping$ListenThread.run(DefaultUdpTransportMapping.java:414)
+	at java.lang.Thread.run(Thread.java:745)
