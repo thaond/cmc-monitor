@@ -2062,3 +2062,59 @@
 10/03 17:27:27 com.fss.thread.ThreadController@395cf902
 1
 10/03 17:39:39 com.fss.thread.ThreadController@395cf902
+10/03 22:26:58 java.io.FileNotFoundException: system.pwd (No such file or directory)
+10/03 22:26:58 	at java.io.FileInputStream.open0(Native Method)
+10/03 22:26:58 	at java.io.FileInputStream.open(FileInputStream.java:195)
+10/03 22:26:58 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+10/03 22:26:58 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+10/03 22:26:58 	at com.fss.thread.ThreadProcessor.getSystemPassword(ThreadProcessor.java:292)
+10/03 22:26:58 	at com.fss.thread.ThreadProcessor.login(ThreadProcessor.java:192)
+10/03 22:26:58 	at com.fss.thread.ThreadServer.run(ThreadServer.java:73)
+10/03 22:26:58 	at java.lang.Thread.run(Thread.java:745)
+2
+10/03 22:27:08 com.fss.thread.ThreadController@6c13d704
+10/03 22:27:09 log4j:WARN No appenders could be found for logger (com.mchange.v2.log.MLog).
+10/03 22:27:09 log4j:WARN Please initialize the log4j system properly.
+2
+10/03 22:27:24 com.fss.thread.ThreadController@6c13d704
+10/03 22:34:37 java.io.FileNotFoundException: system.pwd (No such file or directory)
+10/03 22:34:37 	at java.io.FileInputStream.open0(Native Method)
+10/03 22:34:37 	at java.io.FileInputStream.open(FileInputStream.java:195)
+10/03 22:34:37 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+10/03 22:34:37 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+10/03 22:34:37 	at com.fss.thread.ThreadProcessor.getSystemPassword(ThreadProcessor.java:292)
+10/03 22:34:37 	at com.fss.thread.ThreadProcessor.login(ThreadProcessor.java:192)
+10/03 22:34:37 	at com.fss.thread.ThreadServer.run(ThreadServer.java:73)
+10/03 22:34:37 	at java.lang.Thread.run(Thread.java:745)
+10/03 22:34:40 java.net.SocketException: Connection reset
+10/03 22:34:40 	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+10/03 22:34:40 	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+10/03 22:34:40 	at com.fss.util.StreamUtil.getFixedSizeBuffer(StreamUtil.java:423)
+10/03 22:34:40 	at com.fss.ddtp.DDTP.load(DDTP.java:81)
+10/03 22:34:40 	at com.fss.ddtp.DDTP.<init>(DDTP.java:63)
+10/03 22:34:40 	at com.fss.ddtp.SocketTransmitter.run(SocketTransmitter.java:82)
+10/03 22:34:40 	at java.lang.Thread.run(Thread.java:745)
+10/03 22:34:42 java.io.FileNotFoundException: system.pwd (No such file or directory)
+10/03 22:34:42 	at java.io.FileInputStream.open0(Native Method)
+10/03 22:34:42 	at java.io.FileInputStream.open(FileInputStream.java:195)
+10/03 22:34:42 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+10/03 22:34:42 	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+10/03 22:34:42 	at com.fss.thread.ThreadProcessor.getSystemPassword(ThreadProcessor.java:292)
+10/03 22:34:42 	at com.fss.thread.ThreadProcessor.login(ThreadProcessor.java:192)
+10/03 22:34:42 	at com.fss.thread.ThreadServer.run(ThreadServer.java:73)
+10/03 22:34:42 	at java.lang.Thread.run(Thread.java:745)
+2
+10/03 22:34:52 com.fss.thread.ThreadController@564503ea
+10/03 22:34:52 log4j:WARN No appenders could be found for logger (com.mchange.v2.log.MLog).
+10/03 22:34:52 log4j:WARN Please initialize the log4j system properly.
+2
+10/03 22:39:51 com.fss.thread.ThreadController@564503ea
+14/03 10:03:42 java.lang.NumberFormatException: For input string: ""
+14/03 10:03:42 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+14/03 10:03:42 	at java.lang.Integer.parseInt(Integer.java:592)
+14/03 10:03:42 	at java.lang.Integer.parseInt(Integer.java:615)
+14/03 10:03:42 	at com.fss.thread.DefaultManager.main(DefaultManager.java:148)
+14/03 10:03:42 java.lang.NullPointerException
+14/03 10:03:42 	at com.fss.thread.ThreadManager.unloadDisabledThread(ThreadManager.java:210)
+14/03 10:03:42 	at com.fss.thread.ThreadManager.run(ThreadManager.java:90)
+14/03 10:03:42 	at java.lang.Thread.run(Thread.java:745)

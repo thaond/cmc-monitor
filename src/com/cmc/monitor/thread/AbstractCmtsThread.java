@@ -19,10 +19,16 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 	private static final Logger _LOGGER = Logger.getLogger(AbstractCmtsThread.class);
 	
 	protected ComboPooledDataSource cpds;
-	protected String driverClass = "com.mysql.jdbc.Driver";
-	protected String jdbcUrl = "jdbc:mysql://localhost:3306/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false";
-	protected String dbUser = "lportal";
-	protected String dbPassword = "thanhlong";
+	//protected String driverClass = "com.mysql.jdbc.Driver";
+	//protected String jdbcUrl = "jdbc:mysql://localhost:3306/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false";
+	//protected String dbUser = "lportal";
+	//protected String dbPassword = "thanhlong";
+	
+	protected String driverClass = "oracle.jdbc.driver.OracleDriver";
+	protected String jdbcUrl = "jdbc:oracle:thin:@172.20.24.76:1521:CTI";
+	protected String dbUser = "cmts";
+	protected String dbPassword = "cmts";
+	
 	protected int dbMinPoolSize = 5;
 	protected int dbAcquireIncrement = 5;
 	protected int dbMaxPoolSize = 100;
