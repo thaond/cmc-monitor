@@ -6,17 +6,30 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import org.apache.log4j.Logger;
 
 import com.cmc.monitor.entity.Cmts;
 import com.cmc.monitor.util.DbUtil;
+import com.crm.thread.util.ThreadUtil;
 import com.fss.thread.ManageableThread;
+import com.fss.util.AppException;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public abstract class AbstractCmtsThread extends ManageableThread {
 	
 	private static final Logger _LOGGER = Logger.getLogger(AbstractCmtsThread.class);
+	
+	private static final String PARAM_DRIVER_CLASS_NAME = "dbDriverClass";
+	private static final String PARAM_DB_URL = "dbURL";
+	private static final String PARAM_DB_USER = "dbUser";
+	private static final String PARAM_DB_PASSWORD = "dbPassword";
+	private static final String PARAM_DB_MIN_POOL_SIZE = "dbMinPoolSize";
+	private static final String PARAM_DB_ACQUIRE_INCREMENT = "dbAcquireIncrement";
+	private static final String PARAM_DB_MAX_POOL_SIZE = "dbMaxPoolSize";
+	private static final String PARAM_DB_MAX_STATEMENTS = "dbMaxStatement";
+	private static final String PARAM_SQL_GET_ALL_CMTS = "sqlGetCmtses";
 	
 	protected ComboPooledDataSource cpds;
 	//protected String driverClass = "com.mysql.jdbc.Driver";
@@ -34,7 +47,7 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 	protected int dbMaxPoolSize = 100;
 	protected int dbMaxStatements = 180;
 	
-	private String sqlGetCmtses = "SELECT * FROM CMTS_MONITOR_Cmts";
+	private String sqlGetCmtses = "SELECT * FROM Cmts";
 	
 	@Override
 	protected void beforeSession() throws Exception {
@@ -120,5 +133,39 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 		}
 		
 		return cmtses;
+	}
+	
+	/* Parameters process */
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public Vector getParameterDefinition() {
+		Vector vector = super.getParameterDefinition();
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_DRIVER_CLASS_NAME, 50, "Connection pool - Driver class name"));
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_DB_URL, 100, "Connection pool - url"));
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_DB_USER, 50, "Connection pool - usename"));
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_DB_PASSWORD, 50, "Connection pool - password"));
+		vector.addElement(ThreadUtil.createIntegerParameter(PARAM_DB_MAX_POOL_SIZE, "Connection pool - max pool size"));
+		vector.addElement(ThreadUtil.createIntegerParameter(PARAM_DB_MIN_POOL_SIZE, "Connection pool - min pool size"));
+		vector.addElement(ThreadUtil.createIntegerParameter(PARAM_DB_MAX_STATEMENTS, "Connection pool - max statements"));
+		vector.addElement(ThreadUtil.createIntegerParameter(PARAM_DB_ACQUIRE_INCREMENT,"Connection pool - acquire increment"));
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_GET_ALL_CMTS, 1000, "SQL Query - get all cmts."));
+		
+		return vector;
+	}
+	
+	@Override
+	public void fillParameter() throws AppException {
+		super.fillParameter();
+		
+		this.driverClass = ThreadUtil.getString(this, PARAM_DRIVER_CLASS_NAME, true, "oracle.jdbc.driver.OracleDriver");
+		this.jdbcUrl = ThreadUtil.getString(this, PARAM_DB_URL, true, "jdbc:oracle:thin:@172.20.6.6:1521:CTI");
+		this.dbUser = ThreadUtil.getString(this, PARAM_DB_USER, true, "cmts");
+		this.dbPassword = ThreadUtil.getString(this, PARAM_DB_PASSWORD, true, "cmts");
+		this.dbMaxPoolSize = ThreadUtil.getInt(this, PARAM_DB_MAX_POOL_SIZE, 100);
+		this.dbMinPoolSize = ThreadUtil.getInt(this, PARAM_DB_MIN_POOL_SIZE, 5);
+		this.dbAcquireIncrement = ThreadUtil.getInt(this, PARAM_DB_ACQUIRE_INCREMENT, 5);
+		this.dbMaxStatements = ThreadUtil.getInt(this, PARAM_DB_MAX_STATEMENTS, 180);
+		this.sqlGetCmtses = ThreadUtil.getString(this, PARAM_SQL_GET_ALL_CMTS, true, "SELECT * FROM Cmts");
 	}
 }

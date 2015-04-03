@@ -68,9 +68,9 @@ public class MerchantCache {
 				merchant.setHost(rsConfig.getString("connectionHost"));
 				merchant.setPort(rsConfig.getInt("connectionPort"));
 				merchant.setStatus(rsConfig.getInt("status"));
-				merchant.setParameters(rsConfig.getString("properties"));
+				//merchant.setParameters(rsConfig.getString("properties"));
 				merchant.setServiceAddress(rsConfig.getString("serviceAddress"));
-				merchants.add(merchant.getMerchantId(), merchant.getIndexKey(), merchant);
+				//merchants.add(merchant.getMerchantId(), merchant.getIndexKey(), merchant);
 				
 				log.debug(String.format("Merchant rule %s is cached", rsConfig.getString("code")));
 				

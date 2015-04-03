@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-8-oracle"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/FSSServerLib.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/snmp4j-2.3.1.jar" sourcepath="/home/richard/Downloads/snmp4j-2.3.1-distribution.zip"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/snmp4j-2.3.1-javadoc.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-8-oracle"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/CHARGING.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/commons-thread.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/commons-vfs2-2.0.jar"/>
@@ -112,5 +111,6 @@
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/common/c3p0-oracle-thin-extras-0.9.5.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/common/mchange-commons-java-0.2.9.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/common/mysql-connector-java-5.1.34-bin.jar"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

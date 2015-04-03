@@ -217,4 +217,14 @@ public class CableModem implements Serializable {
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
 	}
+
+	@Override
+	public String toString() {
+		return "CableModem [createDate=" + createDate + ", modifiedDate=" + modifiedDate + ", cmtsId=" + cmtsId + ", cmIndex=" + cmIndex
+				+ ", fecUncorrectable=" + fecUncorrectable + ", fecCorrected=" + fecCorrected + ", mircroRef=" + mircroRef + ", rxPower="
+				+ rxPower + ", txPower=" + txPower + ", usPower=" + usPower + ", dsPower=" + dsPower + ", uncorrectables=" + uncorrectables
+				+ ", correcteds=" + correcteds + ", unerroreds=" + unerroreds + ", dsSNR=" + dsSNR + ", usSNR=" + usSNR + ", ucIfIndex="
+				+ ucIfIndex + ", dcIfIndex=" + dcIfIndex + ", macAddress=" + macAddress + ", cmSubIndex=" + cmSubIndex + ", status="
+				+ status + ", ipAddress=" + ipAddress + "]";
+	}
 }

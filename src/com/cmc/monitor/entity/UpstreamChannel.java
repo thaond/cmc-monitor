@@ -233,4 +233,18 @@ public class UpstreamChannel implements Serializable {
 		this.cmtsId = cmtsId;
 	}
 
+	@Override
+	public String toString() {
+		return "UpstreamChannel [createDate=" + createDate + ", modifiedDate=" + modifiedDate + ", qam=" + qam + ", avgOnlineCmDsSNR="
+				+ avgOnlineCmDsSNR + ", avgOnlineCmTxPower=" + avgOnlineCmTxPower + ", avgOnlineCmRxPower=" + avgOnlineCmRxPower
+				+ ", avgOnlineCmDsPower=" + avgOnlineCmDsPower + ", avgOnlineCmUsPower=" + avgOnlineCmUsPower + ", avgOnlineCmMicRef="
+				+ avgOnlineCmMicRef + ", fecUncorrectable=" + fecUncorrectable + ", fecCorrected=" + fecCorrected + ", upChannelCmTotal="
+				+ upChannelCmTotal + ", upChannelCmRegisterd=" + upChannelCmRegisterd + ", upChannelCmActive=" + upChannelCmActive
+				+ ", upChannelModProfile=" + upChannelModProfile + ", upChannelWidth=" + upChannelWidth + ", upChannelFrequency="
+				+ upChannelFrequency + ", ifSigQUncorrectables=" + ifSigQUncorrectables + ", ifSigQCorrecteds=" + ifSigQCorrecteds
+				+ ", ifSigQUnerroreds=" + ifSigQUnerroreds + ", ifSigQSNR=" + ifSigQSNR + ", ifAlias=" + ifAlias + ", ifIndex=" + ifIndex
+				+ ", ifDesc=" + ifDesc + ", cmtsId=" + cmtsId + "]";
+	}
+
+	
 }

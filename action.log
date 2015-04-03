@@ -520,3 +520,17 @@
 10/03 22:34:52 <FONT color="#0033CC"><B>CableModemThread started</B></FONT>
 10/03 22:39:51 User 'system' try to start thread 'UpstreamChannelThread'
 10/03 22:39:51 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+03/04 11:27:17 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+03/04 11:28:03 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+03/04 11:28:04 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+03/04 11:45:37 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+03/04 11:45:41 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+03/04 11:45:43 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+03/04 11:45:53 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+03/04 11:45:55 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+03/04 11:46:08 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+03/04 11:46:15 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+03/04 11:46:37 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+03/04 12:22:44 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+03/04 12:22:51 User 'system' try to update parameter of thread 'UpstreamChannelThread'
+03/04 12:31:57 User 'system' try to update parameter of thread 'UpstreamChannelThread'
