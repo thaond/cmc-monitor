@@ -1,5 +1,9 @@
 <c3p0-config>
   <default-config>
+    <!-- <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+    <property name="jdbcUrl">jdbc:oracle:thin:@192.168.88.44:1521:db01</property>
+    <property name="user">nvasgate</property>
+    <property name="password">nms123</property> -->
     <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
     <property name="jdbcUrl">jdbc:oracle:thin:@192.168.88.44:1521:db01</property>
     <property name="user">nvasgate</property>

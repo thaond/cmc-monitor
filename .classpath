@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-8-oracle"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/FSSServerLib.jar"/>
-	<classpathentry kind="lib" path="/u02/projects/nms/libs/snmp4j-2.3.1.jar" sourcepath="/home/richard/Downloads/snmp4j-2.3.1-distribution.zip"/>
+	<classpathentry kind="lib" path="/u02/projects/nms/libs/snmp4j-2.3.1.jar" sourcepath="/home/richard/Downloads/snmp4j-2.3.3-distribution.zip"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/snmp4j-2.3.1-javadoc.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/CHARGING.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/commons-thread.jar"/>

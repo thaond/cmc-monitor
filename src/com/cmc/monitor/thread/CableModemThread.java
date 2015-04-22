@@ -74,17 +74,49 @@ public class CableModemThread extends AbstractCmtsThread {
 			log("Load all cable modem for caching! - Time: " + System.currentTimeMillis());
 			cableModemMap = getAllCableModem();
 		}
-		cmtses.forEach(cmts -> {
-			if (cmts.isEnable()) {
-				try {
-					log("Start process cmts \'" + cmts.getTitle() + "\' - time: " + System.currentTimeMillis());
-					SnmpUtils.getTables("udp:" + cmts.getHost() + "/161", cmts.getCommunity(), OID_COLUMNS, new CableModelListener(cmts));
-				} catch (Exception e) {
-					_LOGGER.error("Error when start process cmts" + cmts.getTitle(), e);
-					log("Error when start process cmts, check log file for detail, errorMessage: " + e.getMessage());
+		
+		synchronized (this.getClass()) {
+			// Resource here ... fuck you for reading this.
+			int proccessingCmts = 0;
+			List<SnmpHelper> snmpHelpers = new ArrayList<SnmpHelper>();
+			long startTime = System.currentTimeMillis();
+			
+			for (Cmts cmts : cmtses) {
+				if (cmts.isEnable()) {
+					try {
+						proccessingCmts++;
+						SnmpHelper helper = new SnmpHelper(cmts.getHost(), cmts.getCommunity());
+						snmpHelpers.add(helper);
+						
+						log("Start process cmts \'" + cmts.getTitle() + "\' - time: " + System.currentTimeMillis());
+						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new CableModelListener(cmts), this);
+					} catch (Exception e) {
+						_LOGGER.error("Error when start process cmts" + cmts.getTitle(), e);
+						log("Error when start process cmts, check log file for detail, errorMessage: " + e.getMessage());
+					}
 				}
 			}
-		});
+			
+			// waiting for all crowler finish
+			while (proccessingCmts > 0) {
+				wait();
+				proccessingCmts--;
+			}
+			
+			// release helpers
+			for (SnmpHelper helper : snmpHelpers) {
+				try {
+					helper.close();
+				} catch (IOException e) {
+					_LOGGER.error("Error when close main helper " + helper.toString(), e);
+					log("Error when close main helper " + helper.toString());
+				}
+			}
+			long finishTime = System.currentTimeMillis();
+			log("Finish getting all cable model info in " + (finishTime - startTime) + " ms");
+			
+		}
+	
 	}
 
 	protected void updateCableModem(TableEvent event, Cmts cmts, SnmpHelper snmpHelper, boolean finished) {
@@ -467,9 +499,15 @@ public class CableModemThread extends AbstractCmtsThread {
 			try {
 				snmpHelper.close();
 			} catch (IOException e) {
-				throw new RuntimeException(e);
+				//throw new RuntimeException(e);
 			}
 			finished = true;
+			
+			if (event.getUserObject() != null) {
+				synchronized (event.getUserObject()) {
+					event.getUserObject().notify();
+				}
+			}
 		}
 
 		@Override

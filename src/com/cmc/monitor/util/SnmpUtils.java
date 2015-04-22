@@ -11,7 +11,9 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.snmp4j.CommunityTarget;
 import org.snmp4j.PDU;
+import org.snmp4j.Session;
 import org.snmp4j.Snmp;
+import org.snmp4j.Target;
 import org.snmp4j.TransportMapping;
 import org.snmp4j.event.ResponseEvent;
 import org.snmp4j.mp.SnmpConstants;
@@ -180,7 +182,7 @@ public class SnmpUtils {
         return str;
     }
     
-    public static void getTables(String address, String community, OID[] columns, TableListener listener) throws IOException {
+    public static void getTables(String address, String community, OID[] columns, TableListener listener, Object userObject) throws IOException {
     	// Prepare target
     	CommunityTarget target = new CommunityTarget();
     	Address targetAddress = GenericAddress.parse(address);
@@ -197,7 +199,12 @@ public class SnmpUtils {
     	transportMapping.listen();
     	
     	TableUtils tableUtils = new TableUtils(snmp, new DefaultPDUFactory());
-    	tableUtils.getTable(target, columns, listener, null, null, null);
+    	tableUtils.getTable(target, columns, listener, userObject, null, null);
+    }
+    
+    public static void getTables(Target target, Session session, OID[] columns, TableListener listener, Object userObject) throws IOException {
+    	TableUtils tableUtils = new TableUtils(session, new DefaultPDUFactory());
+    	tableUtils.getTable(target, columns, listener, userObject, null, null);
     }
     
     public static List<TableEvent> getTables(String address, String community, OID[] columns) throws IOException {

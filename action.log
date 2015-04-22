@@ -534,3 +534,67 @@
 03/04 12:22:44 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
 03/04 12:22:51 User 'system' try to update parameter of thread 'UpstreamChannelThread'
 03/04 12:31:57 User 'system' try to update parameter of thread 'UpstreamChannelThread'
+22/04 12:54:36 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 12:54:45 User 'system' try to start thread 'CableModemThread'
+22/04 12:54:46 <FONT color="#0033CC"><B>CableModemThread started</B></FONT>
+22/04 12:54:48 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 12:54:49 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 13:32:09 User 'system' try to destroy thread 'UpstreamChannelThread'
+22/04 13:32:30 User 'system' try to update parameter of thread 'UpstreamChannelThread'
+22/04 13:52:20 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 13:52:21 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 14:34:11 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 15:39:26 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 15:39:34 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 15:39:34 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 15:39:36 User 'system' try to start thread 'CableModemThread'
+22/04 15:39:36 <FONT color="#0033CC"><B>CableModemThread started</B></FONT>
+22/04 15:46:32 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 15:46:38 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 15:47:11 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 15:47:17 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 15:47:17 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 15:52:06 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 15:52:17 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 15:52:18 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 15:52:34 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 15:52:42 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 15:52:48 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 15:52:49 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 16:14:17 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:14:24 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 16:14:25 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:14:49 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 16:14:55 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:15:05 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 16:15:05 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 16:28:33 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:28:41 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 16:28:42 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:28:57 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 16:28:58 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 16:31:00 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 16:33:04 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:34:22 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:35:09 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 16:35:12 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:35:19 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 16:35:19 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 16:39:57 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:40:06 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 16:40:08 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:40:13 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 16:40:13 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 16:45:11 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:45:17 <FONT color="#CC6622"><U>User 'system' disconnected</U></FONT>
+22/04 16:45:19 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:45:28 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 16:45:28 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>
+22/04 16:45:31 User 'system' try to start thread 'CableModemThread'
+22/04 16:45:31 <FONT color="#0033CC"><B>CableModemThread started</B></FONT>
+22/04 16:50:29 User 'system' try to destroy thread 'CableModemThread'
+22/04 16:53:32 <FONT color="#2266CC"><U>User 'system' connected successfully</U></FONT>
+22/04 16:53:39 User 'system' try to start thread 'CableModemThread'
+22/04 16:53:40 <FONT color="#0033CC"><B>CableModemThread started</B></FONT>
+22/04 16:53:43 User 'system' try to start thread 'UpstreamChannelThread'
+22/04 16:53:44 <FONT color="#0033CC"><B>UpstreamChannelThread started</B></FONT>

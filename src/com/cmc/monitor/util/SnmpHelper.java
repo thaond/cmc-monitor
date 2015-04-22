@@ -70,7 +70,7 @@ public class SnmpHelper {
 	 * This method return a Target, which contains information about where the data should be fetched and how.
 	 * @return
 	 */
-	private Target getTarget() {
+	public Target getTarget() {
 		CommunityTarget target = new CommunityTarget();
 		Address address = GenericAddress.parse("udp:" + host + "/161");
 		
@@ -82,6 +82,9 @@ public class SnmpHelper {
 		
 		return target;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "SnmpHelper [host=" + host + ", community=" + community + "]";
+	}	
 }
