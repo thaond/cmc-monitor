@@ -21,6 +21,8 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 	
 	private static final Logger _LOGGER = Logger.getLogger(AbstractCmtsThread.class);
 	
+	protected volatile int numberOfThread = 0;
+	
 	private static final String PARAM_DRIVER_CLASS_NAME = "dbDriverClass";
 	private static final String PARAM_DB_URL = "dbURL";
 	private static final String PARAM_DB_USER = "dbUser";
@@ -167,5 +169,13 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 		this.dbAcquireIncrement = ThreadUtil.getInt(this, PARAM_DB_ACQUIRE_INCREMENT, 5);
 		this.dbMaxStatements = ThreadUtil.getInt(this, PARAM_DB_MAX_STATEMENTS, 180);
 		this.sqlGetCmtses = ThreadUtil.getString(this, PARAM_SQL_GET_ALL_CMTS, true, "SELECT * FROM Cmts");
+	}
+	
+	public synchronized void releaseCouter() {
+		numberOfThread--;
+	}
+
+	public synchronized void acquireCounter() {
+		numberOfThread++;
 	}
 }

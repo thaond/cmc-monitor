@@ -1,0 +1,138 @@
+2015-05-04 13:55:12,365 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+	at com.cmc.monitor.thread.CableModemThread.updateCableModem(CableModemThread.java:158)
+	at com.cmc.monitor.thread.CableModemThread$CableModelListener.next(CableModemThread.java:497)
+	at org.snmp4j.util.TableUtils$TableRequest.onResponse(TableUtils.java:517)
+	at org.snmp4j.Snmp.processPdu(Snmp.java:1203)
+	at org.snmp4j.MessageDispatcherImpl.fireProcessPdu(MessageDispatcherImpl.java:675)
+	at org.snmp4j.MessageDispatcherImpl.dispatchMessage(MessageDispatcherImpl.java:302)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:373)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:333)
+	at org.snmp4j.transport.AbstractTransportMapping.fireProcessMessage(AbstractTransportMapping.java:76)
+	at org.snmp4j.transport.DefaultUdpTransportMapping$ListenThread.run(DefaultUdpTransportMapping.java:414)
+	at java.lang.Thread.run(Thread.java:745)
+2015-05-04 13:55:15,337 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+	at com.cmc.monitor.thread.CableModemThread.updateCableModem(CableModemThread.java:158)
+	at com.cmc.monitor.thread.CableModemThread$CableModelListener.next(CableModemThread.java:497)
+	at org.snmp4j.util.TableUtils$TableRequest.onResponse(TableUtils.java:517)
+	at org.snmp4j.Snmp.processPdu(Snmp.java:1203)
+	at org.snmp4j.MessageDispatcherImpl.fireProcessPdu(MessageDispatcherImpl.java:675)
+	at org.snmp4j.MessageDispatcherImpl.dispatchMessage(MessageDispatcherImpl.java:302)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:373)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:333)
+	at org.snmp4j.transport.AbstractTransportMapping.fireProcessMessage(AbstractTransportMapping.java:76)
+	at org.snmp4j.transport.DefaultUdpTransportMapping$ListenThread.run(DefaultUdpTransportMapping.java:414)
+	at java.lang.Thread.run(Thread.java:745)
+2015-05-04 13:55:15,339 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+	at com.cmc.monitor.thread.CableModemThread.updateCableModem(CableModemThread.java:158)
+	at com.cmc.monitor.thread.CableModemThread$CableModelListener.next(CableModemThread.java:497)
+	at org.snmp4j.util.TableUtils$TableRequest.onResponse(TableUtils.java:517)
+	at org.snmp4j.Snmp.processPdu(Snmp.java:1203)
+	at org.snmp4j.MessageDispatcherImpl.fireProcessPdu(MessageDispatcherImpl.java:675)
+	at org.snmp4j.MessageDispatcherImpl.dispatchMessage(MessageDispatcherImpl.java:302)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:373)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:333)
+	at org.snmp4j.transport.AbstractTransportMapping.fireProcessMessage(AbstractTransportMapping.java:76)
+	at org.snmp4j.transport.DefaultUdpTransportMapping$ListenThread.run(DefaultUdpTransportMapping.java:414)
+	at java.lang.Thread.run(Thread.java:745)
+2015-05-04 13:55:15,340 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+	at com.cmc.monitor.thread.CableModemThread.updateCableModem(CableModemThread.java:158)
+	at com.cmc.monitor.thread.CableModemThread$CableModelListener.next(CableModemThread.java:497)
+	at org.snmp4j.util.TableUtils$TableRequest.onResponse(TableUtils.java:517)
+	at org.snmp4j.Snmp.processPdu(Snmp.java:1203)
+	at org.snmp4j.MessageDispatcherImpl.fireProcessPdu(MessageDispatcherImpl.java:675)
+	at org.snmp4j.MessageDispatcherImpl.dispatchMessage(MessageDispatcherImpl.java:302)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:373)
+	at org.snmp4j.MessageDispatcherImpl.processMessage(MessageDispatcherImpl.java:333)
+	at org.snmp4j.transport.AbstractTransportMapping.fireProcessMessage(AbstractTransportMapping.java:76)
+	at org.snmp4j.transport.DefaultUdpTransportMapping$ListenThread.run(DefaultUdpTransportMapping.java:414)
+	at java.lang.Thread.run(Thread.java:745)
+2015-05-04 14:02:25,053 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:02:25,053 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:02:25,056 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:02:25,056 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:02:25,057 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:02:25,057 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:08:57,285 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:08:57,290 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:08:57,308 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:08:57,309 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:03,287 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:03,291 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:03,309 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:03,309 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:09,289 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:09,292 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:09,311 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:09,311 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:15,291 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:15,293 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:15,312 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:21,294 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:21,315 ERROR [Timer-5453] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:27,294 ERROR [Timer-5454] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:27,316 ERROR [Timer-5457] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:27,317 ERROR [Timer-5453] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:33,295 ERROR [Timer-5454] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:33,297 ERROR [Timer-5458] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:33,318 ERROR [Timer-5457] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:33,318 ERROR [Timer-5453] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:39,297 ERROR [Timer-5454] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:39,298 ERROR [Timer-5458] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:39,319 ERROR [Timer-5457] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:39,320 ERROR [Timer-5453] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:45,298 ERROR [Timer-5454] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:45,298 ERROR [Timer-5458] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:45,320 ERROR [Timer-5457] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:45,320 ERROR [Timer-5453] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:51,300 ERROR [Timer-5454] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:51,301 ERROR [Timer-5458] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:51,322 ERROR [Timer-5457] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:09:57,302 ERROR [Timer-5458] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException
+2015-05-04 14:15:15,317 ERROR [DefaultUDPTransportMapping_0.0.0.0/0] CableModemThread$CableModelListener - Error when next
+java.lang.NullPointerException

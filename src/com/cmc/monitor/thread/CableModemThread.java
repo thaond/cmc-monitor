@@ -31,7 +31,7 @@ import com.fss.util.AppException;
 public class CableModemThread extends AbstractCmtsThread {
 
 	private static final Logger _LOGGER = Logger.getLogger(CableModemThread.class);
-	
+
 	private static final String PARAM_SQL_GET_CABLE_MODEM = "sqlGetCableModem";
 	private static final String PARAM_SQL_GET_ALL_CABLE_MODEMS = "sqlGetAllCableModem";
 	private static final String PARAM_SQL_UPDATE_CABLE_MODEM = "sqlUpdateCableModem";
@@ -40,12 +40,17 @@ public class CableModemThread extends AbstractCmtsThread {
 	private static final String PARAM_SQL_BATCH_SIZE = "batchSize";
 	private static final String PARAM_USING_CACHE = "usingCache";
 
-//	protected String sqlGetCableModem = "SELECT * FROM CMTS_MONITOR_CableModem cm WHERE cm.macAddress = ?";
-//	protected String sqlGetAllCableModem = "SELECT * FROM CMTS_MONITOR_CableModem";
-//	protected String sqlUpdateCableModem = "UPDATE CMTS_MONITOR_CableModem SET modifiedDate = NOW(), fecUncorrectable = ?, fecCorrected = ?, microRef = ?, rxPower = ?, txPower = ?, usPower = ?, dsPower = ?, uncorrectables = ?, correcteds = ?, unerroreds = ?, dsSNR = ?, usSNR = ?, ucIfIndex = ?, dcIfIndex = ?, cmSubIndex = ?, cmtsId = ?, cmIndex = ?, status = ? WHERE macAddress = ?";
-//	protected String sqlInsertCableModem = "INSERT INTO CMTS_MONITOR_CableModem (macAddress, createDate, modifiedDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, NOW(), NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
-//	protected String sqlInsertCableModemHistory = "INSERT INTO CMTS_MONITOR_CableModemHistory (macAddress, createDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
-	
+	// protected String sqlGetCableModem =
+	// "SELECT * FROM CMTS_MONITOR_CableModem cm WHERE cm.macAddress = ?";
+	// protected String sqlGetAllCableModem =
+	// "SELECT * FROM CMTS_MONITOR_CableModem";
+	// protected String sqlUpdateCableModem =
+	// "UPDATE CMTS_MONITOR_CableModem SET modifiedDate = NOW(), fecUncorrectable = ?, fecCorrected = ?, microRef = ?, rxPower = ?, txPower = ?, usPower = ?, dsPower = ?, uncorrectables = ?, correcteds = ?, unerroreds = ?, dsSNR = ?, usSNR = ?, ucIfIndex = ?, dcIfIndex = ?, cmSubIndex = ?, cmtsId = ?, cmIndex = ?, status = ? WHERE macAddress = ?";
+	// protected String sqlInsertCableModem =
+	// "INSERT INTO CMTS_MONITOR_CableModem (macAddress, createDate, modifiedDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, NOW(), NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+	// protected String sqlInsertCableModemHistory =
+	// "INSERT INTO CMTS_MONITOR_CableModemHistory (macAddress, createDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+
 	protected String sqlGetCableModem = "SELECT * FROM CMTS_MONITOR_CableModem cm WHERE cm.macAddress = ?";
 	protected String sqlGetAllCableModem = "SELECT * FROM CMTS_MONITOR_CableModem";
 	protected String sqlUpdateCableModem = "UPDATE CMTS_MONITOR_CableModem SET modifiedDate = NOW(), fecUncorrectable = ?, fecCorrected = ?, microRef = ?, rxPower = ?, txPower = ?, usPower = ?, dsPower = ?, uncorrectables = ?, correcteds = ?, unerroreds = ?, dsSNR = ?, usSNR = ?, ucIfIndex = ?, dcIfIndex = ?, cmSubIndex = ?, cmtsId = ?, cmIndex = ?, status = ? WHERE macAddress = ?";
@@ -74,20 +79,19 @@ public class CableModemThread extends AbstractCmtsThread {
 			log("Load all cable modem for caching! - Time: " + System.currentTimeMillis());
 			cableModemMap = getAllCableModem();
 		}
-		
-		synchronized (this.getClass()) {
-			// Resource here ... fuck you for reading this.
-			int proccessingCmts = 0;
-			List<SnmpHelper> snmpHelpers = new ArrayList<SnmpHelper>();
-			long startTime = System.currentTimeMillis();
-			
+
+		// Resource here ... fuck you for reading this.
+		List<SnmpHelper> snmpHelpers = new ArrayList<SnmpHelper>();
+		long startTime = System.currentTimeMillis();
+
+		synchronized (this) {
 			for (Cmts cmts : cmtses) {
 				if (cmts.isEnable()) {
 					try {
-						proccessingCmts++;
 						SnmpHelper helper = new SnmpHelper(cmts.getHost(), cmts.getCommunity());
 						snmpHelpers.add(helper);
-						
+						acquireCounter();
+
 						log("Start process cmts \'" + cmts.getTitle() + "\' - time: " + System.currentTimeMillis());
 						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new CableModelListener(cmts), this);
 					} catch (Exception e) {
@@ -96,27 +100,26 @@ public class CableModemThread extends AbstractCmtsThread {
 					}
 				}
 			}
-			
-			// waiting for all crowler finish
-			while (proccessingCmts > 0) {
-				wait();
-				proccessingCmts--;
-			}
-			
-			// release helpers
-			for (SnmpHelper helper : snmpHelpers) {
-				try {
-					helper.close();
-				} catch (IOException e) {
-					_LOGGER.error("Error when close main helper " + helper.toString(), e);
-					log("Error when close main helper " + helper.toString());
-				}
-			}
-			long finishTime = System.currentTimeMillis();
-			log("Finish getting all cable model info in " + (finishTime - startTime) + " ms");
+
+		}
+
+		// waiting for all crowler finish
+		while (numberOfThread > 0) {
 			
 		}
-	
+
+		// release helpers
+		for (SnmpHelper helper : snmpHelpers) {
+			try {
+				helper.close();
+			} catch (IOException e) {
+				_LOGGER.error("Error when close main helper " + helper.toString(), e);
+				log("Error when close main helper " + helper.toString());
+			}
+		}
+		long finishTime = System.currentTimeMillis();
+		log("Finish getting all cable model info in " + (finishTime - startTime) + " ms");
+
 	}
 
 	protected void updateCableModem(TableEvent event, Cmts cmts, SnmpHelper snmpHelper, boolean finished) {
@@ -161,7 +164,8 @@ public class CableModemThread extends AbstractCmtsThread {
 
 		if (usingCache) {
 			lastCm = cableModemMap.get(cm.getMacAddress());
-			if (lastCm == null) lastCm = getCableModem(cm.getMacAddress());
+			if (lastCm == null)
+				lastCm = getCableModem(cm.getMacAddress());
 		} else {
 			lastCm = getCableModem(cm.getMacAddress());
 		}
@@ -175,7 +179,7 @@ public class CableModemThread extends AbstractCmtsThread {
 
 		double fecCorrected = (correcteds / (unerroreds + correcteds + uncorrectables)) * 100;
 		double fecUncorrectable = (uncorrectables / (unerroreds + correcteds + uncorrectables)) * 100;
-		
+
 		if (fecCorrected > 1000000 || fecUncorrectable > 1000000) {
 			log("What the fuck: cm=" + cm.toString() + " lastCm = " + lastCm.toString());
 		}
@@ -491,23 +495,28 @@ public class CableModemThread extends AbstractCmtsThread {
 
 		@Override
 		public synchronized void finished(TableEvent event) {
-			if ((event.getStatus() == TableEvent.STATUS_OK) && (event.getIndex() != null)) {
-				updateCableModem(event, cmts, snmpHelper, true);
-			} else {
-				finishAll(cmts);
-			}
 			try {
-				snmpHelper.close();
-			} catch (IOException e) {
-				//throw new RuntimeException(e);
-			}
-			finished = true;
-			
-			if (event.getUserObject() != null) {
-				synchronized (event.getUserObject()) {
-					event.getUserObject().notify();
+				if ((event.getStatus() == TableEvent.STATUS_OK) && (event.getIndex() != null)) {
+					updateCableModem(event, cmts, snmpHelper, true);
+				} else {
+					finishAll(cmts);
+				}
+				try {
+					snmpHelper.close();
+				} catch (IOException e) {
+					// throw new RuntimeException(e);
+				}
+			} catch (Exception e) {
+				_LOGGER.error("Error when finish", e);
+				log("error when finish: " + e.getMessage());
+			} finally {
+				finished = true;
+
+				if (event.getUserObject() != null) {
+					((CableModemThread) event.getUserObject()).releaseCouter();
 				}
 			}
+
 		}
 
 		@Override
@@ -515,34 +524,53 @@ public class CableModemThread extends AbstractCmtsThread {
 			return finished;
 		}
 	}
-	
+
 	/* Thread parameters */
-	
+
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Vector getParameterDefinition() {
 		Vector vector = super.getParameterDefinition();
-		
+
 		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_GET_ALL_CABLE_MODEMS, 1000, "SQL Query - get all cable modem."));
 		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_GET_CABLE_MODEM, 1000, "SQL Query - get cable modem by mac address."));
 		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_INSERT_CABLE_MODEM, 1000, "SQL Query - insert cable modem"));
-		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_INSERT_CABLE_MODEM_HISTORY, 1000, "SQL Query - insert cable modem history"));
-		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_UPDATE_CABLE_MODEM, 1000, "SQL Query - update cable modem by mac address"));
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_INSERT_CABLE_MODEM_HISTORY, 1000,
+				"SQL Query - insert cable modem history"));
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_UPDATE_CABLE_MODEM, 1000,
+				"SQL Query - update cable modem by mac address"));
 		vector.addElement(ThreadUtil.createIntegerParameter(PARAM_SQL_BATCH_SIZE, "Batch size insert to db"));
 		vector.addElement(ThreadUtil.createBooleanParameter(PARAM_USING_CACHE, "Cache cable modem to process or no"));
-		
+
 		return vector;
 	}
-	
+
 	@Override
 	public void fillParameter() throws AppException {
 		super.fillParameter();
-		
-		this.sqlGetAllCableModem = ThreadUtil.getString(this, PARAM_SQL_GET_ALL_CABLE_MODEMS, true, "SELECT * FROM CMTS_MONITOR_CableModem");
-		this.sqlGetCableModem = ThreadUtil.getString(this, PARAM_SQL_GET_CABLE_MODEM, true, "SELECT * FROM CMTS_MONITOR_CableModem cm WHERE cm.macAddress = ?");
-		this.sqlInsertCableModem = ThreadUtil.getString(this, PARAM_SQL_INSERT_CABLE_MODEM, true, "INSERT INTO CMTS_MONITOR_CableModem (macAddress, createDate, modifiedDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, SYSDATE, SYSDATE, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
-		this.sqlInsertCableModemHistory = ThreadUtil.getString(this, PARAM_SQL_INSERT_CABLE_MODEM_HISTORY, true, "INSERT INTO CMTS_MONITOR_CableModemHistory (macAddress, createDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, SYSDATE, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
-		this.sqlUpdateCableModem = ThreadUtil.getString(this, PARAM_SQL_UPDATE_CABLE_MODEM, true, "UPDATE CMTS_MONITOR_CableModem SET modifiedDate = NOW(), fecUncorrectable = ?, fecCorrected = ?, microRef = ?, rxPower = ?, txPower = ?, usPower = ?, dsPower = ?, uncorrectables = ?, correcteds = ?, unerroreds = ?, dsSNR = ?, usSNR = ?, ucIfIndex = ?, dcIfIndex = ?, cmSubIndex = ?, cmtsId = ?, cmIndex = ?, status = ? WHERE macAddress = ?");
+
+		this.sqlGetAllCableModem = ThreadUtil
+				.getString(this, PARAM_SQL_GET_ALL_CABLE_MODEMS, true, "SELECT * FROM CMTS_MONITOR_CableModem");
+		this.sqlGetCableModem = ThreadUtil.getString(this, PARAM_SQL_GET_CABLE_MODEM, true,
+				"SELECT * FROM CMTS_MONITOR_CableModem cm WHERE cm.macAddress = ?");
+		this.sqlInsertCableModem = ThreadUtil
+				.getString(
+						this,
+						PARAM_SQL_INSERT_CABLE_MODEM,
+						true,
+						"INSERT INTO CMTS_MONITOR_CableModem (macAddress, createDate, modifiedDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, SYSDATE, SYSDATE, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
+		this.sqlInsertCableModemHistory = ThreadUtil
+				.getString(
+						this,
+						PARAM_SQL_INSERT_CABLE_MODEM_HISTORY,
+						true,
+						"INSERT INTO CMTS_MONITOR_CableModemHistory (macAddress, createDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, SYSDATE, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
+		this.sqlUpdateCableModem = ThreadUtil
+				.getString(
+						this,
+						PARAM_SQL_UPDATE_CABLE_MODEM,
+						true,
+						"UPDATE CMTS_MONITOR_CableModem SET modifiedDate = NOW(), fecUncorrectable = ?, fecCorrected = ?, microRef = ?, rxPower = ?, txPower = ?, usPower = ?, dsPower = ?, uncorrectables = ?, correcteds = ?, unerroreds = ?, dsSNR = ?, usSNR = ?, ucIfIndex = ?, dcIfIndex = ?, cmSubIndex = ?, cmtsId = ?, cmIndex = ?, status = ? WHERE macAddress = ?");
 		this.batchSize = ThreadUtil.getInt(this, PARAM_SQL_BATCH_SIZE, 1000);
 		this.usingCache = ThreadUtil.getBoolean(this, PARAM_USING_CACHE, true);
 	}

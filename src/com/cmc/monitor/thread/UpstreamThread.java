@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Vector;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Semaphore;
 
 import org.apache.log4j.Logger;
 import org.snmp4j.event.ResponseEvent;
@@ -25,6 +26,7 @@ import com.cmc.monitor.util.SnmpHelper;
 import com.cmc.monitor.util.SnmpUtils;
 import com.crm.thread.util.ThreadUtil;
 import com.fss.util.AppException;
+import com.sun.swing.internal.plaf.synth.resources.synth;
 
 public class UpstreamThread extends AbstractCmtsThread {
 
@@ -74,21 +76,18 @@ public class UpstreamThread extends AbstractCmtsThread {
 		List<Cmts> cmtses = getCmtses();
 		log("Count cmts: " + cmtses.size());
 
+		List<SnmpHelper> snmpHelpers = new ArrayList<SnmpHelper>();
+		long startTime = System.currentTimeMillis();
+
 		synchronized (this.getClass()) {
-			// Resource here ... fuck you for reading this.
-			int proccessingCmts = 0;
-			List<SnmpHelper> snmpHelpers = new ArrayList<SnmpHelper>();
-			long startTime = System.currentTimeMillis();
-			
 			for (Cmts cmts : cmtses) {
 				if (cmts.isEnable()) {
 					try {
-						proccessingCmts++;
+						acquireCounter();
 						SnmpHelper helper = new SnmpHelper(cmts.getHost(), cmts.getCommunity());
 						snmpHelpers.add(helper);
-						
-						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new UpstreamListener(cmts),
-								this);
+
+						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new UpstreamListener(cmts), this);
 					} catch (Exception e) {
 						_LOGGER.error("Error when get upstream information for cmts: " + cmts.getHost(), e);
 						log("Error when get upstream information for cmts:" + e.getMessage());
@@ -96,26 +95,24 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 			}
 
-			// waiting for all crowler finish
-			while (proccessingCmts > 0) {
-				wait();
-				proccessingCmts--;
-			}
+		}
 
-			// release helpers
-			for (SnmpHelper helper : snmpHelpers) {
-				try {
-					helper.close();
-				} catch (IOException e) {
-					_LOGGER.error("Error when close main helper " + helper.toString(), e);
-					log("Error when close main helper " + helper.toString());
-				}
-			}
-			long finishTime = System.currentTimeMillis();
-			log("Finish getting all upstream info in " + (finishTime - startTime) + " ms");
+		// waiting for all crowler finish
+		while (numberOfThread > 0) {
 
 		}
 
+		// release helpers
+		for (SnmpHelper helper : snmpHelpers) {
+			try {
+				helper.close();
+			} catch (Exception e) {
+				_LOGGER.error("Error when close main helper " + helper.toString(), e);
+				log("Error when close main helper " + helper.toString());
+			}
+		}
+		long finishTime = System.currentTimeMillis();
+		log("Finish getting all upstream info in " + (finishTime - startTime) + " ms");
 	}
 
 	protected void updateUpstreamChannel(TableEvent event, Cmts cmts, boolean finished) {
@@ -477,19 +474,23 @@ public class UpstreamThread extends AbstractCmtsThread {
 
 		@Override
 		public synchronized void finished(TableEvent event) {
-			if ((event.getStatus() == TableEvent.STATUS_OK) && (event.getIndex() != null)) {
-				updateUpstreamChannel(event, cmts, true);
-			} else {
-				finishAll(cmts);
-			}
+			try {
+				if ((event.getStatus() == TableEvent.STATUS_OK) && (event.getIndex() != null)) {
+					updateUpstreamChannel(event, cmts, true);
+				} else {
+					finishAll(cmts);
+				}
+			} catch (Exception e) {
+				_LOGGER.error("Error when finish", e);
+				log("error when finish: " + e.getMessage());
+			} finally {
+				finished = true;
 
-			finished = true;
-
-			if (event.getUserObject() != null) {
-				synchronized (event.getUserObject()) {
-					event.getUserObject().notify();
+				if (event.getUserObject() != null) {
+					((UpstreamThread) event.getUserObject()).releaseCouter();
 				}
 			}
+
 		}
 
 		@Override
