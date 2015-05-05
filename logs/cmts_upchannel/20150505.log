@@ -1,0 +1,591 @@
+Destroying... 
+05/05 13:22:14 UpstreamChannelThread started
+processing session...
+Error when getAllCmts() - ErrorMessage: null
+05/05 13:22:14 Error occured: null
+Destroying... 
+05/05 13:23:06 UpstreamChannelThread started
+Prepare db datasource ... time: 1430806986676
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430806993342
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430806993344
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430806993404
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430806993405
+All UpstreamChannel of cmtsId 203 has been update - time: 1430806993454
+All UpstreamChannel of cmtsId 209 has been update - time: 1430806993455
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430806993455
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430806993456
+All UpstreamChannel of cmtsId 208 has been update - time: 1430806993505
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430806994264
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430806994265
+All UpstreamChannel of cmtsId 202 has been update - time: 1430806994304
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430806994312
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430806994313
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430806994353
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430806994353
+All UpstreamChannel of cmtsId 205 has been update - time: 1430806994354
+All UpstreamChannel of cmtsId 201 has been update - time: 1430806994359
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807001201
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807001201
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807001285
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807001923
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807001924
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807001967
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807014500
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807014500
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807014543
+Finish getting all upstream info in 26287 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807079561
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807079562
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807079592
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807079593
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807079593
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807079615
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807079616
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807079616
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807079646
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807079684
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807079684
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807079733
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807080621
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807080622
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807080683
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807080683
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807080684
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807080723
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807086547
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807086548
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807086620
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807087177
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807087182
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807087240
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807102240
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807102241
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807102293
+Finish getting all upstream info in 27680 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807167031
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807167032
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807167106
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807167137
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807167138
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807167144
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807167144
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807167179
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807167184
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807167246
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807167246
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807167293
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807168373
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807168373
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807168414
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807168414
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807168415
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807168416
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807174347
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807174348
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807174393
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807178130
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807178131
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807178167
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807190372
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807190373
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807190443
+Finish getting all upstream info in 28076 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807255184
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807255185
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807255234
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807255234
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807255234
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807255234
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807255234
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807255269
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807255282
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807255395
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807255396
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807255427
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807256515
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807256515
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807256554
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807256554
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807256555
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807256629
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807263547
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807263547
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807263618
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807264530
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807264530
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807264571
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807278387
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807278387
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807278430
+Finish getting all upstream info in 27920 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807343892
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807343893
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807343966
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807343966
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807343967
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807343967
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807343968
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807343972
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807344002
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807344009
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807344009
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807344043
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807344506
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807344506
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807344561
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807344561
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807344561
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807344561
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807351788
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807351789
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807351868
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807353139
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807353139
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807353181
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807365145
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807365146
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807365197
+Finish getting all upstream info in 26698 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807431388
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807431389
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807431549
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807431615
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807431615
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807431669
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807432234
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807432235
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807432291
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807432419
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807432420
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807432458
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807432596
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807432597
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807432632
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807434025
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807434025
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807434067
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807442245
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807442246
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807442320
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807442347
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807442348
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807442377
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807459494
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807459494
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807459596
+Finish getting all upstream info in 34328 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807524921
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807524922
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807524965
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807524966
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807525009
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807525009
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807525010
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807525029
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807525045
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807525106
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807525106
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807525159
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807525857
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807525857
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807525915
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807525915
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807525915
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807525957
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807532549
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807532550
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807532638
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807534409
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807534410
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807534451
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807550154
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807550154
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807550256
+Finish getting all upstream info in 30405 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807614931
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807614932
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807615028
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807615028
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807615034
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807615064
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807615155
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807615155
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807615182
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807615183
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807615183
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807615188
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807616333
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807616333
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807616376
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807616376
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807616377
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807616386
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807622987
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807622988
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807623058
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807625601
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807625601
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807625640
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807635426
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807635426
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807635506
+Finish getting all upstream info in 25180 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807700683
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807700685
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807700723
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807700723
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807700739
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807700739
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807700739
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807700787
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807700787
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807700787
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807700787
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807700822
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807701578
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807701579
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807701645
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807701647
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807701647
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807701698
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807708097
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807708097
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807708188
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807709555
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807709556
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807709602
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807720213
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807720213
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807720268
+Finish getting all upstream info in 24696 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807786595
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807786596
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807787149
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807787149
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807787150
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807787192
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807789312
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807789312
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807789385
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807789473
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807789474
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807789518
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807789530
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807789530
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807789560
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807789567
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807789567
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807789596
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807797259
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807797260
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807797390
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807797422
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807797422
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807797455
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807809920
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807809920
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807810002
+Finish getting all upstream info in 29415 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430807875377
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430807875378
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430807875378
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430807875378
+All UpstreamChannel of cmtsId 203 has been update - time: 1430807875378
+All UpstreamChannel of cmtsId 208 has been update - time: 1430807875492
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430807875643
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430807875644
+All UpstreamChannel of cmtsId 209 has been update - time: 1430807875679
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430807876077
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430807876077
+All UpstreamChannel of cmtsId 201 has been update - time: 1430807876157
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430807876157
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430807876158
+All UpstreamChannel of cmtsId 205 has been update - time: 1430807876192
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430807876668
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430807876668
+All UpstreamChannel of cmtsId 202 has been update - time: 1430807876711
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430807884567
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430807884568
+All UpstreamChannel of cmtsId 207 has been update - time: 1430807884636
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430807885502
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430807885503
+All UpstreamChannel of cmtsId 206 has been update - time: 1430807885536
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430807935707
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430807935707
+All UpstreamChannel of cmtsId 204 has been update - time: 1430807935891
+Finish getting all upstream info in 65821 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430808000867
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430808000868
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430808000946
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430808000946
+All UpstreamChannel of cmtsId 202 has been update - time: 1430808000989
+All UpstreamChannel of cmtsId 203 has been update - time: 1430808001004
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430808001011
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430808001011
+All UpstreamChannel of cmtsId 208 has been update - time: 1430808001041
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430808001215
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430808001216
+All UpstreamChannel of cmtsId 209 has been update - time: 1430808001246
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430808001964
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430808001964
+All UpstreamChannel of cmtsId 201 has been update - time: 1430808002005
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430808002010
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430808002010
+All UpstreamChannel of cmtsId 205 has been update - time: 1430808002010
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430808009464
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430808009464
+All UpstreamChannel of cmtsId 207 has been update - time: 1430808009652
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430808009676
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430808009676
+All UpstreamChannel of cmtsId 206 has been update - time: 1430808009721
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430808028398
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430808028398
+All UpstreamChannel of cmtsId 204 has been update - time: 1430808028490
+Finish getting all upstream info in 32531 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430808093501
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430808093502
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430808093529
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430808093530
+All UpstreamChannel of cmtsId 203 has been update - time: 1430808093583
+All UpstreamChannel of cmtsId 202 has been update - time: 1430808093638
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430808093689
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430808093689
+All UpstreamChannel of cmtsId 208 has been update - time: 1430808093728
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430808093753
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430808093754
+All UpstreamChannel of cmtsId 209 has been update - time: 1430808093788
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430808094559
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430808094560
+All UpstreamChannel of cmtsId 201 has been update - time: 1430808094613
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430808094613
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430808094613
+All UpstreamChannel of cmtsId 205 has been update - time: 1430808094647
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430808102100
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430808102100
+All UpstreamChannel of cmtsId 207 has been update - time: 1430808102179
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430808102243
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430808102243
+All UpstreamChannel of cmtsId 206 has been update - time: 1430808102279
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430808116971
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430808116971
+All UpstreamChannel of cmtsId 204 has been update - time: 1430808117054
+Finish getting all upstream info in 28498 ms
+Destroying... 
+05/05 13:42:50 UpstreamChannelThread started
+Prepare db datasource ... time: 1430808170265
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430808176949
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430808176951
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430808176973
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430808176973
+All UpstreamChannel of cmtsId 208 has been update - time: 1430808176974
+All UpstreamChannel of cmtsId 203 has been update - time: 1430808177596
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430808177597
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430808177598
+All UpstreamChannel of cmtsId 209 has been update - time: 1430808177662
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430808178254
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430808178255
+All UpstreamChannel of cmtsId 201 has been update - time: 1430808178411
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430808178424
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430808178424
+All UpstreamChannel of cmtsId 205 has been update - time: 1430808178492
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430808178502
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430808178502
+All UpstreamChannel of cmtsId 202 has been update - time: 1430808178536
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430808184258
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430808184259
+All UpstreamChannel of cmtsId 206 has been update - time: 1430808184330
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430808186054
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430808186055
+All UpstreamChannel of cmtsId 207 has been update - time: 1430808186094
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430808198485
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430808198486
+All UpstreamChannel of cmtsId 204 has been update - time: 1430808198553
+Finish getting all upstream info in 26362 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430808263044
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430808263047
+All UpstreamChannel of cmtsId 203 has been update - time: 1430808263129
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430808263361
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430808263361
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430808263361
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430808263361
+All UpstreamChannel of cmtsId 209 has been update - time: 1430808263362
+All UpstreamChannel of cmtsId 208 has been update - time: 1430808263519
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430808264388
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430808264389
+All UpstreamChannel of cmtsId 202 has been update - time: 1430808264516
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430808264640
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430808264641
+All UpstreamChannel of cmtsId 201 has been update - time: 1430808264792
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430808264792
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430808264793
+All UpstreamChannel of cmtsId 205 has been update - time: 1430808264830
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430808272199
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430808272200
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430808272258
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430808272259
+All UpstreamChannel of cmtsId 206 has been update - time: 1430808272274
+All UpstreamChannel of cmtsId 207 has been update - time: 1430808272294
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430808285424
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430808285425
+All UpstreamChannel of cmtsId 204 has been update - time: 1430808285497
+Finish getting all upstream info in 26866 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430808351623
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430808351624
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430808351673
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430808351673
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430808351703
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430808351704
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430808351750
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430808351751
+All UpstreamChannel of cmtsId 202 has been update - time: 1430808351760
+All UpstreamChannel of cmtsId 205 has been update - time: 1430808351768
+All UpstreamChannel of cmtsId 201 has been update - time: 1430808351792
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430808351799
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430808351800
+All UpstreamChannel of cmtsId 209 has been update - time: 1430808351816
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430808351822
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430808351822
+All UpstreamChannel of cmtsId 208 has been update - time: 1430808351823
+All UpstreamChannel of cmtsId 203 has been update - time: 1430808351890
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430808359606
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430808359607
+All UpstreamChannel of cmtsId 206 has been update - time: 1430808359728
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430808360445
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430808360445
+All UpstreamChannel of cmtsId 207 has been update - time: 1430808360493
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430808372578
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430808372580
+All UpstreamChannel of cmtsId 204 has been update - time: 1430808372628
+Finish getting all upstream info in 27012 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430808436792
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430808436793
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430808436859
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430808436860
+All UpstreamChannel of cmtsId 202 has been update - time: 1430808436868
+All UpstreamChannel of cmtsId 209 has been update - time: 1430808436891
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430808437129
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430808437129
+All UpstreamChannel of cmtsId 203 has been update - time: 1430808437178
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430808437273
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430808437274
+All UpstreamChannel of cmtsId 208 has been update - time: 1430808437315
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430808438695
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430808438695
+All UpstreamChannel of cmtsId 201 has been update - time: 1430808438749
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430808438749
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430808438749
+All UpstreamChannel of cmtsId 205 has been update - time: 1430808438796
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430808443483
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430808443483
+All UpstreamChannel of cmtsId 206 has been update - time: 1430808443557
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430808444497
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430808444497
+All UpstreamChannel of cmtsId 207 has been update - time: 1430808444533
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430808455762
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430808455763
+All UpstreamChannel of cmtsId 204 has been update - time: 1430808455840
+Finish getting all upstream info in 23149 ms
+processing session...
+Count cmts: 9
+Add UpstreamChannelHistory of cmtsId 205 has been insert _ time: 1430808522575
+Add UpstreamChannelHistory of cmtsId 201 has been insert _ time: 1430808522577
+Add UpstreamChannel of cmtsId 205 has been insert - time: 1430808522577
+Add UpstreamChannel of cmtsId 201 has been insert - time: 1430808522577
+All UpstreamChannel of cmtsId 201 has been update - time: 1430808522578
+Add UpstreamChannelHistory of cmtsId 203 has been insert _ time: 1430808522614
+Add UpstreamChannel of cmtsId 203 has been insert - time: 1430808522614
+All UpstreamChannel of cmtsId 203 has been update - time: 1430808522674
+Add UpstreamChannelHistory of cmtsId 202 has been insert _ time: 1430808522741
+Add UpstreamChannelHistory of cmtsId 209 has been insert _ time: 1430808522741
+Add UpstreamChannel of cmtsId 202 has been insert - time: 1430808522741
+Add UpstreamChannel of cmtsId 209 has been insert - time: 1430808522741
+All UpstreamChannel of cmtsId 209 has been update - time: 1430808522742
+All UpstreamChannel of cmtsId 205 has been update - time: 1430808522746
+Add UpstreamChannelHistory of cmtsId 208 has been insert _ time: 1430808522747
+Add UpstreamChannel of cmtsId 208 has been insert - time: 1430808522747
+All UpstreamChannel of cmtsId 208 has been update - time: 1430808522747
+All UpstreamChannel of cmtsId 202 has been update - time: 1430808522817
+Add UpstreamChannelHistory of cmtsId 206 has been insert _ time: 1430808535883
+Add UpstreamChannel of cmtsId 206 has been insert - time: 1430808535883
+All UpstreamChannel of cmtsId 206 has been update - time: 1430808536032
+Add UpstreamChannelHistory of cmtsId 207 has been insert _ time: 1430808538238
+Add UpstreamChannel of cmtsId 207 has been insert - time: 1430808538239
+All UpstreamChannel of cmtsId 207 has been update - time: 1430808538700
+Add UpstreamChannelHistory of cmtsId 204 has been insert _ time: 1430808551315
+Add UpstreamChannel of cmtsId 204 has been insert - time: 1430808551316
+All UpstreamChannel of cmtsId 204 has been update - time: 1430808551395
+Finish getting all upstream info in 34821 ms
+Destroying... 
+05/05 14:22:52 UpstreamChannelThread started
+processing session...
+Error when getAllCmts() - ErrorMessage: null
+05/05 14:22:52 Error occured: null
+Destroying... 
+05/05 14:23:23 Thread destroyed
+Destroying... 
+05/05 14:23:27 UpstreamChannelThread started
+processing session...
+Error when getAllCmts() - ErrorMessage: null
+05/05 14:23:27 Error occured: null
+processing session...
+Error when getAllCmts() - ErrorMessage: null
+05/05 14:24:27 Error occured: null
+processing session...
+Error when getAllCmts() - ErrorMessage: null
+05/05 14:25:27 Error occured: null
+Destroying... 
+05/05 14:26:11 UpstreamChannelThread started
+05/05 14:26:41 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:28:12 Error occured: Connections could not be acquired from the underlying database!
+Destroying... 
+05/05 14:28:39 UpstreamChannelThread started
+05/05 14:29:09 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:30:39 Error occured: Connections could not be acquired from the underlying database!
+Destroying... 
+05/05 14:38:00 UpstreamChannelThread started
+05/05 14:38:30 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:40:00 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:41:30 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:43:00 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:44:30 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:46:00 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:47:30 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:49:00 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:50:30 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:52:00 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:53:30 Error occured: Connections could not be acquired from the underlying database!
+05/05 14:55:00 Error occured: Connections could not be acquired from the underlying database!
