@@ -34,10 +34,7 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 	private static final String PARAM_SQL_GET_ALL_CMTS = "sqlGetCmtses";
 	
 	protected ComboPooledDataSource cpds;
-	//protected String driverClass = "com.mysql.jdbc.Driver";
-	//protected String jdbcUrl = "jdbc:mysql://localhost:3306/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false";
-	//protected String dbUser = "lportal";
-	//protected String dbPassword = "thanhlong";
+	protected Connection conn; 
 	
 	protected String driverClass = "oracle.jdbc.driver.OracleDriver";
 	protected String jdbcUrl = "jdbc:oracle:thin:@172.20.24.76:1521:CTI";
@@ -74,14 +71,20 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 			cpds.setUnreturnedConnectionTimeout(3600);
 			cpds.setMaxIdleTimeExcessConnections(300);
 			cpds.setMaxIdleTime(3600);
-			
 		}
+		
+//		if (conn == null || conn.isClosed()) {
+//			conn = cpds.getConnection();
+//			
+//			conn.setAutoCommit(false);
+//		}
 	}
 	
 	
 	
 	@Override
 	public Connection getConnection() {
+		//return conn;
 		try {
 			return cpds.getConnection();
 		} catch (SQLException e) {
@@ -94,16 +97,15 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 	@Override
 	protected void afterSession() throws Exception {
 		super.afterSession();
-		//cpds.close();
 	}
 
 	@Override
 	public void destroy() {
 		super.destroy();
-		
 		log("Destroying... ");
 		if (cpds != null) {
-			cpds.hardReset();
+			cpds.close();
+			cpds = null;
 		}
 	}
 	

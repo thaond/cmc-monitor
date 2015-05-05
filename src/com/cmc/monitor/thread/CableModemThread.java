@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,6 @@ import java.util.Vector;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.apache.log4j.Logger;
-import org.snmp4j.Session;
 import org.snmp4j.event.ResponseEvent;
 import org.snmp4j.smi.OID;
 import org.snmp4j.util.TableEvent;
@@ -41,17 +39,6 @@ public class CableModemThread extends AbstractCmtsThread {
 	private static final String PARAM_SQL_BATCH_SIZE = "batchSize";
 	private static final String PARAM_USING_CACHE = "usingCache";
 
-	// protected String sqlGetCableModem =
-	// "SELECT * FROM CMTS_MONITOR_CableModem cm WHERE cm.macAddress = ?";
-	// protected String sqlGetAllCableModem =
-	// "SELECT * FROM CMTS_MONITOR_CableModem";
-	// protected String sqlUpdateCableModem =
-	// "UPDATE CMTS_MONITOR_CableModem SET modifiedDate = NOW(), fecUncorrectable = ?, fecCorrected = ?, microRef = ?, rxPower = ?, txPower = ?, usPower = ?, dsPower = ?, uncorrectables = ?, correcteds = ?, unerroreds = ?, dsSNR = ?, usSNR = ?, ucIfIndex = ?, dcIfIndex = ?, cmSubIndex = ?, cmtsId = ?, cmIndex = ?, status = ? WHERE macAddress = ?";
-	// protected String sqlInsertCableModem =
-	// "INSERT INTO CMTS_MONITOR_CableModem (macAddress, createDate, modifiedDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, NOW(), NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
-	// protected String sqlInsertCableModemHistory =
-	// "INSERT INTO CMTS_MONITOR_CableModemHistory (macAddress, createDate, fecUncorrectable, fecCorrected, microRef, rxPower, txPower, usPower, dsPower, uncorrectables, correcteds, unerroreds, dsSNR, usSNR, ucIfIndex, dcIfIndex, cmSubIndex, cmtsId, cmIndex, status ) VALUES (?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
-
 	protected String sqlGetCableModem = "SELECT * FROM CMTS_MONITOR_CableModem cm WHERE cm.macAddress = ?";
 	protected String sqlGetAllCableModem = "SELECT * FROM CMTS_MONITOR_CableModem";
 	protected String sqlUpdateCableModem = "UPDATE CMTS_MONITOR_CableModem SET modifiedDate = NOW(), fecUncorrectable = ?, fecCorrected = ?, microRef = ?, rxPower = ?, txPower = ?, usPower = ?, dsPower = ?, uncorrectables = ?, correcteds = ?, unerroreds = ?, dsSNR = ?, usSNR = ?, ucIfIndex = ?, dcIfIndex = ?, cmSubIndex = ?, cmtsId = ?, cmIndex = ?, status = ? WHERE macAddress = ?";
@@ -65,7 +52,7 @@ public class CableModemThread extends AbstractCmtsThread {
 	private Queue<CableModem> insertCableModemQueue = new ConcurrentLinkedQueue<CableModem>();
 	private Queue<CableModem> insertCableModemHistoryQueue = new ConcurrentLinkedQueue<CableModem>();
 
-	//private Map<String, CableModem> cableModemMap;
+	private Map<String, CableModem> cableModemMap;
 
 	private static OID[] OID_COLUMNS = { new OID(OIdConstants.CmMacAddress), new OID(OIdConstants.CmDcIfIndex),
 			new OID(OIdConstants.CmUcIfIndex), new OID(OIdConstants.CmUsSnr), new OID(OIdConstants.CmUnerroreds),
@@ -76,13 +63,16 @@ public class CableModemThread extends AbstractCmtsThread {
 	protected void processSession() throws Exception {
 		log("Load all cmts entry - time: " + System.currentTimeMillis());
 		List<Cmts> cmtses = getCmtses();
-//		if (usingCache) {
-//			log("Load all cable modem for caching! - Time: " + System.currentTimeMillis());
-//			cableModemMap = getAllCableModem();
-//		}
+
+		if (usingCache) {
+			log("Load all cable modem for caching! - Time: " + System.currentTimeMillis());
+			cableModemMap = getAllCableModem();
+		}
 
 		// Resource here ... fuck you for reading this.
 		long startTime = System.currentTimeMillis();
+
+		log("Starting process all " + cmtses.size() + " CMTS .................");
 
 		synchronized (this) {
 			for (Cmts cmts : cmtses) {
@@ -90,8 +80,8 @@ public class CableModemThread extends AbstractCmtsThread {
 					try {
 						SnmpHelper helper = new SnmpHelper(cmts.getHost(), cmts.getCommunity());
 						acquireCounter();
-
-						log("Start process cmts \'" + cmts.getTitle() + "\' - time: " + System.currentTimeMillis());
+						// log("Start process cmts \'" + cmts.getTitle() +
+						// "\' - time: " + System.currentTimeMillis());
 						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new CableModelListener(cmts), helper);
 					} catch (Exception e) {
 						_LOGGER.error("Error when start process cmts" + cmts.getTitle(), e);
@@ -99,7 +89,6 @@ public class CableModemThread extends AbstractCmtsThread {
 					}
 				}
 			}
-
 		}
 
 		// waiting for all crowler finish
@@ -107,13 +96,12 @@ public class CableModemThread extends AbstractCmtsThread {
 			// Waiting for all spyder finished.
 		}
 		long finishTime = System.currentTimeMillis();
-		log("Finish getting all cable model info in " + (finishTime - startTime) + " ms");
+		log("Finish getting all cable model data info in " + (finishTime - startTime) + " ms.");
 
 	}
 
 	protected void updateCableModem(TableEvent event, Cmts cmts, SnmpHelper snmpHelper, boolean finished) {
 		CableModem cm = new CableModem();
-
 		cm.setCmtsId(cmts.getCmtsId());
 		cm.setCmIndex(event.getIndex().last());
 		cm.setCmSubIndex(event.getColumns()[0].getVariable().toSubIndex(true).toString());
@@ -148,30 +136,13 @@ public class CableModemThread extends AbstractCmtsThread {
 		}
 
 		// Caculate FECs
-
-		/*CableModem lastCm = null;
-
-		if (usingCache) {
-			lastCm = cableModemMap.get(cm.getMacAddress());
-			if (lastCm == null)
-				lastCm = getCableModem(cm.getMacAddress());
-		} else {
-			lastCm = getCableModem(cm.getMacAddress());
-		}
-
-		if (lastCm == null)
-			lastCm = new CableModem();
-
-		double unerroreds = (double) (cm.getUnerroreds() - lastCm.getUnerroreds());
-		double correcteds = (double) (cm.getCorrecteds() - lastCm.getCorrecteds());
-		double uncorrectables = (double) (cm.getUncorrectables() - lastCm.getUncorrectables());
-*/
 		double total = cm.getCorrecteds() + cm.getUncorrectables() + cm.getUnerroreds();
 		double fecCorrected = (cm.getCorrecteds() / total) * 100;
 		double fecUncorrectable = (cm.getUncorrectables() / total) * 100;
 
 		if (fecCorrected > 1000000 || fecUncorrectable > 1000000) {
-			log("What the fuck: cm=" + cm.toString());;
+			log("What the fuck: cm=" + cm.toString());
+			;
 		}
 
 		// validate double
@@ -189,50 +160,59 @@ public class CableModemThread extends AbstractCmtsThread {
 
 	protected CableModem getCableModem(String macAdress) {
 		CableModem cm = null;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		try {
-			conn = getConnection();
 
-			pstmt = conn.prepareStatement(sqlGetCableModem);
-			pstmt.setString(1, macAdress);
+		if (usingCache) { // Load from cache
 
-			rs = pstmt.executeQuery();
+			cm = cableModemMap.get(macAdress);
 
-			if (rs.next()) {
-				cm = new CableModem();
-				cm.setMacAddress(rs.getString("macAddress"));
-				cm.setCreateDate(rs.getDate("createDate"));
-				cm.setModifiedDate(rs.getDate("modifiedDate"));
-				cm.setFecUncorrectable(rs.getDouble("fecUncorrectable"));
-				cm.setFecCorrected(rs.getDouble("fecCorrected"));
-				cm.setMircroRef(rs.getLong("microRef"));
-				cm.setRxPower(rs.getInt("rxPower"));
-				cm.setTxPower(rs.getInt("txPower"));
-				cm.setUsPower(rs.getInt("usPower"));
-				cm.setDsPower(rs.getInt("dsPower"));
-				cm.setUncorrectables(rs.getLong("uncorrectables"));
-				cm.setCorrecteds(rs.getLong("correcteds"));
-				cm.setUnerroreds(rs.getLong("unerroreds"));
-				cm.setDsSNR(rs.getInt("dsSNR"));
-				cm.setUsSNR(rs.getInt("usSNR"));
-				cm.setUcIfIndex(rs.getInt("ucIfIndex"));
-				cm.setDcIfIndex(rs.getInt("dcIfIndex"));
-				cm.setCmSubIndex(rs.getString("cmSubIndex"));
-				cm.setCmtsId(rs.getLong("cmtsId"));
-				cm.setCmIndex(rs.getInt("cmIndex"));
-				cm.setStatus(rs.getInt("status"));
+		}
+		if (cm == null) { // Load from database
+
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			try {
+				conn = getConnection();
+
+				pstmt = conn.prepareStatement(sqlGetCableModem);
+				pstmt.setString(1, macAdress);
+
+				rs = pstmt.executeQuery();
+
+				if (rs.next()) {
+					cm = new CableModem();
+					cm.setMacAddress(rs.getString("macAddress"));
+					cm.setCreateDate(rs.getDate("createDate"));
+					cm.setModifiedDate(rs.getDate("modifiedDate"));
+					cm.setFecUncorrectable(rs.getDouble("fecUncorrectable"));
+					cm.setFecCorrected(rs.getDouble("fecCorrected"));
+					cm.setMircroRef(rs.getLong("microRef"));
+					cm.setRxPower(rs.getInt("rxPower"));
+					cm.setTxPower(rs.getInt("txPower"));
+					cm.setUsPower(rs.getInt("usPower"));
+					cm.setDsPower(rs.getInt("dsPower"));
+					cm.setUncorrectables(rs.getLong("uncorrectables"));
+					cm.setCorrecteds(rs.getLong("correcteds"));
+					cm.setUnerroreds(rs.getLong("unerroreds"));
+					cm.setDsSNR(rs.getInt("dsSNR"));
+					cm.setUsSNR(rs.getInt("usSNR"));
+					cm.setUcIfIndex(rs.getInt("ucIfIndex"));
+					cm.setDcIfIndex(rs.getInt("dcIfIndex"));
+					cm.setCmSubIndex(rs.getString("cmSubIndex"));
+					cm.setCmtsId(rs.getLong("cmtsId"));
+					cm.setCmIndex(rs.getInt("cmIndex"));
+					cm.setStatus(rs.getInt("status"));
+				}
+
+			} catch (Exception e) {
+				_LOGGER.error("Error when getting CableModem from db with macAdddress = " + macAdress, e);
+				log("Error when getting CableModem from db with macAdddress = " + macAdress + ". Check log for detail. Message: "
+						+ e.getMessage());
+			} finally {
+				DbUtil.closeConnection(conn);
+				DbUtil.closeResultSet(rs);
+				DbUtil.closeStatement(pstmt);
 			}
-
-		} catch (Exception e) {
-			_LOGGER.error("Error when getting CableModem from db with macAdddress = " + macAdress, e);
-			log("Error when getting CableModem from db with macAdddress = " + macAdress + ". Check log for detail. Message: "
-					+ e.getMessage());
-		} finally {
-			DbUtil.closeConnection(conn);
-			DbUtil.closeResultSet(rs);
-			DbUtil.closeStatement(pstmt);
 		}
 
 		return cm;
@@ -302,19 +282,13 @@ public class CableModemThread extends AbstractCmtsThread {
 	}
 
 	protected void insertCableModemToDB(Cmts cmts, boolean finished) {
-		if (insertCableModemQueue.size() == batchSize || finished) {
-			int size = insertCableModemQueue.size() <= batchSize ? insertCableModemQueue.size() : batchSize;
-			List<CableModem> cms = new ArrayList<CableModem>();
-
-			for (int i = 0; i < size; i++) {
-				CableModem cm = insertCableModemQueue.poll();
-				if (cm != null) {
-					cms.add(cm);
-				}
-			}
-
+		if (finished) {
 			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertCableModem)) {
-				for (CableModem cm : cms) {
+
+				int size = insertCableModemQueue.size();
+
+				for (int i = 0; i < size; i++) {
+					CableModem cm = insertCableModemQueue.poll();
 
 					pstmt.setString(1, cm.getMacAddress());
 					pstmt.setDouble(2, cm.getFecUncorrectable());
@@ -337,13 +311,14 @@ public class CableModemThread extends AbstractCmtsThread {
 					pstmt.setInt(19, cm.getStatus());
 
 					pstmt.addBatch();
+
+					if (i % batchSize == 0 && i < size - 1) {
+						pstmt.executeBatch();
+					}
 				}
 
 				pstmt.executeBatch();
 
-				if (finished) {
-					log("Inserting CableModem has been finished for cmts \'" + cmts.getTitle() + "\' - Time: " + System.currentTimeMillis());
-				}
 			} catch (Exception e) {
 				_LOGGER.error("Error when trying insert CableModems for cmts \'" + cmts.getTitle() + "\'.", e);
 				log("Error when trying insert CableModems for cmts \'" + cmts.getTitle() + "\'. Check log for detail - ErrorMessage: "
@@ -353,20 +328,13 @@ public class CableModemThread extends AbstractCmtsThread {
 	}
 
 	protected void insertCableModemHistoryToDB(Cmts cmts, boolean finished) {
-		if (insertCableModemHistoryQueue.size() == batchSize || finished) {
-			int size = insertCableModemHistoryQueue.size() <= batchSize ? insertCableModemHistoryQueue.size() : batchSize;
-			List<CableModem> cms = new ArrayList<CableModem>();
-
-			for (int i = 0; i < size; i++) {
-				CableModem cm = insertCableModemHistoryQueue.poll();
-				if (cm != null) {
-					cms.add(cm);
-				}
-			}
-
+		if (finished) {
 			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertCableModemHistory)) {
-				for (CableModem cm : cms) {
 
+				int size = insertCableModemHistoryQueue.size();
+
+				for (int i = 0; i < size; i++) {
+					CableModem cm = insertCableModemHistoryQueue.poll();
 					pstmt.setString(1, cm.getMacAddress());
 					pstmt.setDouble(2, cm.getFecUncorrectable());
 					pstmt.setDouble(3, cm.getFecCorrected());
@@ -388,36 +356,32 @@ public class CableModemThread extends AbstractCmtsThread {
 					pstmt.setInt(19, cm.getStatus());
 
 					pstmt.addBatch();
+
+					if (i % batchSize == 0 && i < size - 1) {
+						pstmt.executeBatch();
+					}
 				}
 
 				pstmt.executeBatch();
 
-				if (finished) {
-					log("Inserting CableModemHistory has been finished for cmts \'" + cmts.getTitle() + "\' - Time: "
-							+ System.currentTimeMillis());
-				}
 			} catch (Exception e) {
 				_LOGGER.error("Error when trying insert CableModemHistories for cmts \'" + cmts.getTitle() + "\'.", e);
 				log("Error when trying insert CableModemHistories for cmts \'" + cmts.getTitle()
 						+ "\'. Check log for detail - ErrorMessage: " + e.getMessage());
+				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}
 
 	protected void updateCableModemToDB(Cmts cmts, boolean finished) {
-		if (updateCableModemQueue.size() == batchSize || finished) {
-			int size = updateCableModemQueue.size() <= batchSize ? updateCableModemQueue.size() : batchSize;
-			List<CableModem> cms = new ArrayList<CableModem>();
-
-			for (int i = 0; i < size; i++) {
-				CableModem cm = updateCableModemQueue.poll();
-				if (cm != null) {
-					cms.add(cm);
-				}
-			}
+		if (finished) {
 
 			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlUpdateCableModem)) {
-				for (CableModem cm : cms) {
+
+				int size = updateCableModemQueue.size();
+
+				for (int i = 0; i < size; i++) {
+					CableModem cm = updateCableModemQueue.poll();
 
 					pstmt.setDouble(1, cm.getFecUncorrectable());
 					pstmt.setDouble(2, cm.getFecCorrected());
@@ -440,17 +404,19 @@ public class CableModemThread extends AbstractCmtsThread {
 					pstmt.setString(19, cm.getMacAddress());
 
 					pstmt.addBatch();
+
+					if (i % batchSize == 0 && i < size - 1) {
+						pstmt.executeBatch();
+					}
 				}
 
 				pstmt.executeBatch();
 
-				if (finished) {
-					log("Updating CableModem has been finished for cmts \'" + cmts.getTitle() + "\' - Time: " + System.currentTimeMillis());
-				}
 			} catch (Exception e) {
 				_LOGGER.error("Error when trying update CableModems for cmts \'" + cmts.getTitle() + "\'.", e);
 				log("Error when trying update CableModems for cmts \'" + cmts.getTitle() + "\'. Check log for detail - ErrorMessage: "
 						+ e.getMessage());
+				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}
@@ -508,10 +474,9 @@ public class CableModemThread extends AbstractCmtsThread {
 					} catch (Exception e) {
 						_LOGGER.error("Cannot close SnmpHelper", e);
 					}
-					
+
 				}
 			}
-
 		}
 
 		@Override

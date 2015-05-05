@@ -31,6 +31,22 @@ public class DbUtil {
 		}
 	}
 	
+	public static void commitConnection(Connection conn) {
+		try {
+			conn.commit();
+		} catch (SQLException e) {
+			_LOGGER.error(e);
+		}
+	}
+	
+	public static void rollbackConnection(Connection conn) {
+		try {
+			conn.rollback();
+		} catch (SQLException e) {
+			_LOGGER.error(e);
+		}
+	}
+	
 	public static void closeResultSet(ResultSet rs) {
 		if (rs != null) {
 			try {

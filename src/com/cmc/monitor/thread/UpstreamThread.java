@@ -6,11 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Vector;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.Semaphore;
 
 import org.apache.log4j.Logger;
 import org.snmp4j.event.ResponseEvent;
@@ -26,37 +27,27 @@ import com.cmc.monitor.util.SnmpHelper;
 import com.cmc.monitor.util.SnmpUtils;
 import com.crm.thread.util.ThreadUtil;
 import com.fss.util.AppException;
-import com.sun.swing.internal.plaf.synth.resources.synth;
 
 public class UpstreamThread extends AbstractCmtsThread {
 
 	private static final Logger _LOGGER = Logger.getLogger(UpstreamThread.class);
 
 	private static final String PARAM_SQL_GET_UPSTREAM = "sqlGetUpstream";
+	private static final String PARAM_SQL_GET_ALL_UPSTREAMS = "sqlGetAllUpstream";
 	private static final String PARAM_SQL_GET_AVG_POWERS = "sqlGetAvgPowers";
 	private static final String PARAM_SQL_UPDATE_UPSTREAM = "sqlUpdateUpstreamChannel";
 	private static final String PARAM_SQL_INSERT_UPSTREAM = "sqlInsertUnstreamChannel";
 	private static final String PARAM_SQL_INSERT_UPSTREAM_HISTORY = "sqlInsertUpstreamChannelHistory";
 	private static final String PARAM_SQL_BATCH_SIZE = "batchSize";
-	@SuppressWarnings("unused")
 	private static final String PARAM_USING_CACHE = "usingCache";
 
-	// protected String sqlGetUpstream =
-	// "SELECT * FROM CMTS_MONITOR_UpstreamChannel us WHERE us.ifIndex = ? AND us.cmtsId = ?";
-	// protected String sqlGetAvgPowers =
-	// "SELECT AVG(cm.microRef) avgMicRef, AVG(cm.rxPower) avgRxPower, AVG(cm.txPower) avgTxPower, AVG(cm.usPower) avgUsPower, AVG(cm.dsPower) avgDsPower, AVG(cm.dsSNR) avgDsSNR FROM CMTS_MONITOR_CableModem cm WHERE cm.cmtsId = ? AND cm.ucIfIndex = ? AND cm.status = 6";
-	// protected String sqlUpdateUpstreamChannel =
-	// "UPDATE CMTS_MONITOR_UpstreamChannel SET modifiedDate = NOW(), qam = ?, avgOnlineCmDsPower = ?, avgOnlineCmUsPower = ?, avgOnlineCmDsSNR = ?, avgOnlineCmTxPower = ?, avgOnlineCmRxPower = ?, fecUncorrectable = ?, fecCorrected = ?, upChannelCmTotal = ?, upChannelCmRegistered = ?, upChannelCmActive = ?, upChannelModProfile = ?, upChannelWidth  = ?, upChannelFrequency  = ?, ifSigQUncorrectables = ?, ifSigQCorrecteds = ?, ifSigQUnerroreds = ?, ifSigQSNR = ?, ifAlias = ?, ifDesc = ? WHERE ifIndex = ? AND cmtsId = ?";
-	// protected String sqlInsertUnstreamChannel =
-	// "INSERT INTO CMTS_MONITOR_UpstreamChannel (ifIndex, cmtsId, createDate , modifiedDate, qam, avgOnlineCmDsPower, avgOnlineCmUsPower, avgOnlineCmDsSNR, avgOnlineCmTxPower, avgOnlineCmRxPower, fecUncorrectable, fecCorrected, upChannelCmTotal, upChannelCmRegistered, upChannelCmActive, upChannelModProfile, upChannelWidth , upChannelFrequency , ifSigQUncorrectables, ifSigQCorrecteds, ifSigQUnerroreds, ifSigQSNR, ifAlias, ifDesc) VALUES (?, ?, NOW(), NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	// protected String sqlInsertUpstreamChannelHistory =
-	// "INSERT INTO CMTS_MONITOR_UpstreamChannelHistory (ifIndex, cmtsId, createDate, qam, avgOnlineCmDsPower, avgOnlineCmUsPower, avgOnlineCmDsSNR, avgOnlineCmTxPower, avgOnlineCmRxPower, fecUncorrectable, fecCorrected, upChannelCmTotal, upChannelCmRegistered, upChannelCmActive, upChannelModProfile, upChannelWidth , upChannelFrequency , ifSigQUncorrectables, ifSigQCorrecteds, ifSigQUnerroreds, ifSigQSNR, ifAlias, ifDesc) VALUES (?, ?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
 	protected String sqlGetUpstream = "SELECT * FROM CMTS_MONITOR_UpstreamChannel us WHERE us.ifIndex = ? AND us.cmtsId = ?";
+	protected String sqlGetAllUpstream = "SELECT * FROM CMTS_UpstreamChannel";
 	protected String sqlGetAvgPowers = "SELECT AVG(cm.microRef) avgMicRef, AVG(cm.rxPower) avgRxPower, AVG(cm.txPower) avgTxPower, AVG(cm.usPower) avgUsPower, AVG(cm.dsPower) avgDsPower, AVG(cm.dsSNR) avgDsSNR FROM CMTS_MONITOR_CableModem cm WHERE cm.cmtsId = ? AND cm.ucIfIndex = ? AND cm.status = 6";
 	protected String sqlUpdateUpstreamChannel = "UPDATE CMTS_MONITOR_UpstreamChannel SET modifiedDate = NOW(), qam = ?, avgOnlineCmDsPower = ?, avgOnlineCmUsPower = ?, avgOnlineCmDsSNR = ?, avgOnlineCmTxPower = ?, avgOnlineCmRxPower = ?, fecUncorrectable = ?, fecCorrected = ?, upChannelCmTotal = ?, upChannelCmRegistered = ?, upChannelCmActive = ?, upChannelModProfile = ?, upChannelWidth  = ?, upChannelFrequency  = ?, ifSigQUncorrectables = ?, ifSigQCorrecteds = ?, ifSigQUnerroreds = ?, ifSigQSNR = ?, ifAlias = ?, ifDesc = ? WHERE ifIndex = ? AND cmtsId = ?";
 	protected String sqlInsertUnstreamChannel = "INSERT INTO CMTS_MONITOR_UpstreamChannel (ifIndex, cmtsId, createDate , modifiedDate, qam, avgOnlineCmDsPower, avgOnlineCmUsPower, avgOnlineCmDsSNR, avgOnlineCmTxPower, avgOnlineCmRxPower, fecUncorrectable, fecCorrected, upChannelCmTotal, upChannelCmRegistered, upChannelCmActive, upChannelModProfile, upChannelWidth , upChannelFrequency , ifSigQUncorrectables, ifSigQCorrecteds, ifSigQUnerroreds, ifSigQSNR, ifAlias, ifDesc) VALUES (?, ?, SYSDATE, SYSDATE, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	protected String sqlInsertUpstreamChannelHistory = "INSERT INTO CMTS_MONITOR_UpstreamChannelHistory (ifIndex, cmtsId, createDate, qam, avgOnlineCmDsPower, avgOnlineCmUsPower, avgOnlineCmDsSNR, avgOnlineCmTxPower, avgOnlineCmRxPower, fecUncorrectable, fecCorrected, upChannelCmTotal, upChannelCmRegistered, upChannelCmActive, upChannelModProfile, upChannelWidth , upChannelFrequency , ifSigQUncorrectables, ifSigQCorrecteds, ifSigQUnerroreds, ifSigQSNR, ifAlias, ifDesc) VALUES (?, ?, SYSDATE, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	protected boolean usingCache = true;
 
 	protected int batchSize = 1000;
 
@@ -69,13 +60,22 @@ public class UpstreamThread extends AbstractCmtsThread {
 			new OID(OIdConstants.UpChannelWidth), new OID(OIdConstants.UpChannelModulationProfile),
 			new OID(OIdConstants.UpChannelCmActive), new OID(OIdConstants.UpChannelCmRegistered), new OID(OIdConstants.UpChannelCmTotal) };
 
+	// Caching
+	protected Map<String, UpstreamChannel> mapUpstreamChannel;
+
 	@Override
 	protected void processSession() throws Exception {
 		log("processing session...");
 		// Get all Cmts
 		List<Cmts> cmtses = getCmtses();
-		log("Count cmts: " + cmtses.size());
 
+		if (usingCache) {
+			// Caching to map
+			log("Loading all cmts for caching ....");
+			mapUpstreamChannel = getAllUpstreamChannels();
+		}
+
+		log("Starting process all " + cmtses.size() + " to getting upstream data ............");
 		long startTime = System.currentTimeMillis();
 
 		synchronized (this.getClass()) {
@@ -99,6 +99,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 		while (numberOfThread > 0) {
 
 		}
+
 		long finishTime = System.currentTimeMillis();
 		log("Finish getting all upstream info in " + (finishTime - startTime) + " ms");
 	}
@@ -135,14 +136,8 @@ public class UpstreamThread extends AbstractCmtsThread {
 			}
 
 			// Calculate FEC
-//			UpstreamChannel lastUs = getUpstreamChannel(us.getIfIndex(), cmts.getCmtsId());
-//			if (lastUs == null)
-//				lastUs = new UpstreamChannel();
-//			double unerroreds = (double) (us.getIfSigQUnerroreds() - lastUs.getIfSigQUnerroreds());
-//			double correcteds = (double) (us.getIfSigQCorrecteds() - lastUs.getIfSigQCorrecteds());
-//			double uncorrectables = (double) (us.getIfSigQUncorrectables() - lastUs.getIfSigQUncorrectables());
-			
-			double total = us.getIfSigQCorrecteds() + us.getIfSigQUncorrectables() + us.getIfSigQUnerroreds(); 
+
+			double total = us.getIfSigQCorrecteds() + us.getIfSigQUncorrectables() + us.getIfSigQUnerroreds();
 
 			double fecCorrected = (us.getIfSigQCorrecteds() / total) * 100;
 			double fecUncorrectable = (us.getIfSigQUncorrectables() / total) * 100;
@@ -202,7 +197,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 			}
 
-			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertUnstreamChannel)) {
+			try (PreparedStatement pstmt = getConnection().prepareStatement(sqlInsertUnstreamChannel)) {
 				for (UpstreamChannel us : ups) {
 
 					pstmt.setInt(1, us.getIfIndex()); // ifIndex,
@@ -232,13 +227,16 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 
 				pstmt.executeBatch();
-
+				DbUtil.commitConnection(conn);
 				if (finished) {
-					log("Add UpstreamChannel of cmtsId " + cmts.getCmtsId() + " has been insert - time: " + System.currentTimeMillis());
+					// log("Add UpstreamChannel of cmtsId " + cmts.getCmtsId() +
+					// " has been insert - time: " +
+					// System.currentTimeMillis());
 				}
 			} catch (SQLException e) {
 				_LOGGER.error("Error when insert upstream channel", e);
 				log("Error when insert upstream channel: " + e.getMessage());
+				DbUtil.rollbackConnection(conn);
 			}
 		}
 
@@ -255,7 +253,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 			}
 
-			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlUpdateUpstreamChannel)) {
+			try (PreparedStatement pstmt = getConnection().prepareStatement(sqlUpdateUpstreamChannel)) {
 				for (UpstreamChannel us : ups) {
 
 					pstmt.setString(1, us.getQam()); // qam,
@@ -285,13 +283,17 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 
 				pstmt.executeBatch();
+				DbUtil.commitConnection(conn);
 
 				if (finished) {
-					log("All UpstreamChannel of cmtsId " + cmts.getCmtsId() + " has been update - time: " + System.currentTimeMillis());
+					// log("All UpstreamChannel of cmtsId " + cmts.getCmtsId() +
+					// " has been update - time: " +
+					// System.currentTimeMillis());
 				}
 			} catch (SQLException e) {
 				_LOGGER.error("Error when update upstream channe", e);
 				log("Error when update upstream channel: " + e.getMessage());
+				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}
@@ -307,7 +309,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 			}
 
-			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertUpstreamChannelHistory)) {
+			try (PreparedStatement pstmt = getConnection().prepareStatement(sqlInsertUpstreamChannelHistory)) {
 				for (UpstreamChannel us : ups) {
 					pstmt.setInt(1, us.getIfIndex()); // ifIndex,
 					pstmt.setLong(2, us.getCmtsId());// cmtsId,
@@ -336,14 +338,17 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 
 				pstmt.executeBatch();
+				DbUtil.commitConnection(conn);
 
 				if (finished) {
-					log("Add UpstreamChannelHistory of cmtsId " + cmts.getCmtsId() + " has been insert _ time: "
-							+ System.currentTimeMillis());
+					// log("Add UpstreamChannelHistory of cmtsId " +
+					// cmts.getCmtsId() + " has been insert _ time: "
+					// + System.currentTimeMillis());
 				}
 			} catch (SQLException e) {
 				_LOGGER.error("Error when insert upstream channel history", e);
 				log("Error when insert upstream channel history: " + e.getMessage());
+				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}
@@ -381,7 +386,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 			_LOGGER.error("Error UpstreamThread.getAvgOnlineCmPowers(" + upIfIndex + ", " + cmtsId + ")", e);
 			log("Error when getAvgOnlineCm" + e.getMessage());
 		} finally {
-			DbUtil.closeConnection(conn);
+			// DbUtil.closeConnection(conn);
 			DbUtil.closeStatement(ptst);
 			DbUtil.closeResultSet(rs);
 		}
@@ -389,55 +394,73 @@ public class UpstreamThread extends AbstractCmtsThread {
 		return results;
 	}
 
+	protected Map<String, UpstreamChannel> getAllUpstreamChannels() {
+		Map<String, UpstreamChannel> map = new HashMap<String, UpstreamChannel>();
+
+		// TODO: Query and caching all Upstream Channel to this map - key =
+		// 'ifIndex-cmtsId'
+
+		return map;
+	}
+
 	protected UpstreamChannel getUpstreamChannel(int ifIndex, long cmtsId) {
 		UpstreamChannel us = null;
 
-		Connection conn = null;
-		PreparedStatement ptmt = null;
-		ResultSet rs = null;
-		try {
-			conn = getConnection();
-			ptmt = conn.prepareStatement(sqlGetUpstream);
-			ptmt.setInt(1, ifIndex);
-			ptmt.setLong(2, cmtsId);
+		if (usingCache) {
+			String key = ifIndex + "-" + cmtsId;
+			us = mapUpstreamChannel.get(key);
+		}
 
-			rs = ptmt.executeQuery();
+		if (us == null) {
 
-			if (rs.next()) {
-				us = new UpstreamChannel();
+			Connection conn = null;
+			PreparedStatement ptmt = null;
+			ResultSet rs = null;
+			
+			try {
+				conn = getConnection();
+				ptmt = conn.prepareStatement(sqlGetUpstream);
+				ptmt.setInt(1, ifIndex);
+				ptmt.setLong(2, cmtsId);
 
-				us.setIfDesc(rs.getString("ifDesc"));
-				us.setIfAlias(rs.getString("ifAlias"));
-				us.setIfSigQSNR(rs.getDouble("ifSigQSNR"));
-				us.setIfSigQUnerroreds(rs.getLong("ifSigQUnerroreds"));
-				us.setIfSigQCorrecteds(rs.getLong("ifSigQCorrecteds"));
-				us.setIfSigQUncorrectables(rs.getLong("ifSigQUncorrectables"));
-				us.setUpChannelWidth(rs.getLong("upChannelWidth"));
-				us.setUpChannelModProfile(rs.getInt("upChannelModProfile"));
-				us.setUpChannelCmActive(rs.getInt("upChannelCmActive"));
-				us.setUpChannelCmRegisterd(rs.getInt("upChannelCmRegistered"));
-				us.setUpChannelCmTotal(rs.getInt("upChannelCmTotal"));
-				us.setFecCorrected(rs.getDouble("fecCorrected"));
-				us.setFecUncorrectable(rs.getDouble("fecUncorrectable"));
-				us.setAvgOnlineCmDsSNR(rs.getDouble("avgOnlineCmDsSNR"));
-				us.setAvgOnlineCmRxPower(rs.getDouble("avgOnlineCmRxPower"));
-				us.setAvgOnlineCmTxPower(rs.getDouble("avgOnlineCmTxPower"));
-				us.setAvgOnlineCmDsPower(rs.getDouble("avgOnlineCmDsPower"));
-				us.setAvgOnlineCmUsPower(rs.getDouble("avgOnlineCmUsPower"));
-				us.setQam(rs.getString("qam"));
-				us.setModifiedDate(rs.getDate("modifiedDate"));
-				us.setCreateDate(rs.getDate("createDate"));
-				us.setCmtsId(rs.getLong("cmtsId"));
-				us.setIfIndex(rs.getInt("ifIndex"));
+				rs = ptmt.executeQuery();
+
+				if (rs.next()) {
+					us = new UpstreamChannel();
+
+					us.setIfDesc(rs.getString("ifDesc"));
+					us.setIfAlias(rs.getString("ifAlias"));
+					us.setIfSigQSNR(rs.getDouble("ifSigQSNR"));
+					us.setIfSigQUnerroreds(rs.getLong("ifSigQUnerroreds"));
+					us.setIfSigQCorrecteds(rs.getLong("ifSigQCorrecteds"));
+					us.setIfSigQUncorrectables(rs.getLong("ifSigQUncorrectables"));
+					us.setUpChannelWidth(rs.getLong("upChannelWidth"));
+					us.setUpChannelModProfile(rs.getInt("upChannelModProfile"));
+					us.setUpChannelCmActive(rs.getInt("upChannelCmActive"));
+					us.setUpChannelCmRegisterd(rs.getInt("upChannelCmRegistered"));
+					us.setUpChannelCmTotal(rs.getInt("upChannelCmTotal"));
+					us.setFecCorrected(rs.getDouble("fecCorrected"));
+					us.setFecUncorrectable(rs.getDouble("fecUncorrectable"));
+					us.setAvgOnlineCmDsSNR(rs.getDouble("avgOnlineCmDsSNR"));
+					us.setAvgOnlineCmRxPower(rs.getDouble("avgOnlineCmRxPower"));
+					us.setAvgOnlineCmTxPower(rs.getDouble("avgOnlineCmTxPower"));
+					us.setAvgOnlineCmDsPower(rs.getDouble("avgOnlineCmDsPower"));
+					us.setAvgOnlineCmUsPower(rs.getDouble("avgOnlineCmUsPower"));
+					us.setQam(rs.getString("qam"));
+					us.setModifiedDate(rs.getDate("modifiedDate"));
+					us.setCreateDate(rs.getDate("createDate"));
+					us.setCmtsId(rs.getLong("cmtsId"));
+					us.setIfIndex(rs.getInt("ifIndex"));
+				}
+
+			} catch (SQLException e) {
+				_LOGGER.error("Error UpstreamThread.getUpstreamChannel(" + ifIndex + ", " + cmtsId + ")", e);
+				log("Error when get UpstreamChannel: " + e.getMessage());
+			} finally {
+				DbUtil.closeConnection(conn);
+				DbUtil.closeResultSet(rs);
+				DbUtil.closeStatement(ptmt);
 			}
-
-		} catch (SQLException e) {
-			_LOGGER.error("Error UpstreamThread.getUpstreamChannel(" + ifIndex + ", " + cmtsId + ")", e);
-			log("Error when get UpstreamChannel: " + e.getMessage());
-		} finally {
-			DbUtil.closeConnection(conn);
-			DbUtil.closeResultSet(rs);
-			DbUtil.closeStatement(ptmt);
 		}
 
 		return us;
@@ -484,14 +507,12 @@ public class UpstreamThread extends AbstractCmtsThread {
 					}
 				}
 			}
-
 		}
 
 		@Override
 		public boolean isFinished() {
 			return finished;
 		}
-
 	}
 
 	/* Parameters process */
@@ -501,6 +522,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 	public Vector getParameterDefinition() {
 		Vector vector = super.getParameterDefinition();
 
+		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_GET_ALL_UPSTREAMS, 200, "SQL query - get all UpstreamChannels"));
 		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_GET_AVG_POWERS, 1000, "SQL Query - get avg powers upstream channel."));
 		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_GET_UPSTREAM, 1000,
 				"SQL Query - get upstream channel by ifIndex and cmtsid."));
@@ -510,9 +532,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 		vector.addElement(ThreadUtil.createTextParameter(PARAM_SQL_UPDATE_UPSTREAM, 1000,
 				"SQL Query - update upstream channel by ifIndex and cmtsId"));
 		vector.addElement(ThreadUtil.createIntegerParameter(PARAM_SQL_BATCH_SIZE, "Batch size insert to db"));
-		// vector.addElement(ThreadUtil.createBooleanParameter(PARAM_USING_CACHE,
-		// "Cache cable modem to process or no"));
-
+		vector.addElement(ThreadUtil.createBooleanParameter(PARAM_USING_CACHE, "Cache cable modem to process or no"));
 		return vector;
 	}
 
@@ -526,6 +546,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 						PARAM_SQL_GET_AVG_POWERS,
 						true,
 						"SELECT AVG(cm.microRef) avgMicRef, AVG(cm.rxPower) avgRxPower, AVG(cm.txPower) avgTxPower, AVG(cm.usPower) avgUsPower, AVG(cm.dsPower) avgDsPower, AVG(cm.dsSNR) avgDsSNR FROM CMTS_MONITOR_CableModem cm WHERE cm.cmtsId = ? AND cm.ucIfIndex = ? AND cm.status = 6");
+		this.sqlGetAllUpstream = ThreadUtil.getString(this, PARAM_SQL_GET_ALL_UPSTREAMS, true, "SELECT * FROM CMTS_UpstreamChannel");
 		this.sqlGetUpstream = ThreadUtil.getString(this, PARAM_SQL_GET_UPSTREAM, true,
 				"SELECT * FROM CMTS_MONITOR_UpstreamChannel us WHERE us.ifIndex = ? AND us.cmtsId = ?");
 		this.sqlInsertUnstreamChannel = ThreadUtil
@@ -547,5 +568,6 @@ public class UpstreamThread extends AbstractCmtsThread {
 						true,
 						"UPDATE CMTS_MONITOR_UpstreamChannel SET modifiedDate = NOW(), qam = ?, avgOnlineCmDsPower = ?, avgOnlineCmUsPower = ?, avgOnlineCmDsSNR = ?, avgOnlineCmTxPower = ?, avgOnlineCmRxPower = ?, fecUncorrectable = ?, fecCorrected = ?, upChannelCmTotal = ?, upChannelCmRegistered = ?, upChannelCmActive = ?, upChannelModProfile = ?, upChannelWidth  = ?, upChannelFrequency  = ?, ifSigQUncorrectables = ?, ifSigQCorrecteds = ?, ifSigQUnerroreds = ?, ifSigQSNR = ?, ifAlias = ?, ifDesc = ? WHERE ifIndex = ? AND cmtsId = ?");
 		this.batchSize = ThreadUtil.getInt(this, PARAM_SQL_BATCH_SIZE, 1000);
+		this.usingCache = ThreadUtil.getBoolean(this, PARAM_USING_CACHE, true);
 	}
 }
