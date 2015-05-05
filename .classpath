@@ -112,5 +112,6 @@
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/common/mchange-commons-java-0.2.9.jar"/>
 	<classpathentry kind="lib" path="/u02/projects/nms/libs/common/mysql-connector-java-5.1.34-bin.jar"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/u02/projects/nms/libs/common/ucp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

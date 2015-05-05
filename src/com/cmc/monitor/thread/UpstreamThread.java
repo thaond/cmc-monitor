@@ -76,7 +76,6 @@ public class UpstreamThread extends AbstractCmtsThread {
 		List<Cmts> cmtses = getCmtses();
 		log("Count cmts: " + cmtses.size());
 
-		List<SnmpHelper> snmpHelpers = new ArrayList<SnmpHelper>();
 		long startTime = System.currentTimeMillis();
 
 		synchronized (this.getClass()) {
@@ -85,9 +84,8 @@ public class UpstreamThread extends AbstractCmtsThread {
 					try {
 						acquireCounter();
 						SnmpHelper helper = new SnmpHelper(cmts.getHost(), cmts.getCommunity());
-						snmpHelpers.add(helper);
 
-						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new UpstreamListener(cmts), this);
+						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new UpstreamListener(cmts), helper);
 					} catch (Exception e) {
 						_LOGGER.error("Error when get upstream information for cmts: " + cmts.getHost(), e);
 						log("Error when get upstream information for cmts:" + e.getMessage());
@@ -100,16 +98,6 @@ public class UpstreamThread extends AbstractCmtsThread {
 		// waiting for all crowler finish
 		while (numberOfThread > 0) {
 
-		}
-
-		// release helpers
-		for (SnmpHelper helper : snmpHelpers) {
-			try {
-				helper.close();
-			} catch (Exception e) {
-				_LOGGER.error("Error when close main helper " + helper.toString(), e);
-				log("Error when close main helper " + helper.toString());
-			}
 		}
 		long finishTime = System.currentTimeMillis();
 		log("Finish getting all upstream info in " + (finishTime - startTime) + " ms");
@@ -147,15 +135,17 @@ public class UpstreamThread extends AbstractCmtsThread {
 			}
 
 			// Calculate FEC
-			UpstreamChannel lastUs = getUpstreamChannel(us.getIfIndex(), cmts.getCmtsId());
-			if (lastUs == null)
-				lastUs = new UpstreamChannel();
-			double unerroreds = (double) (us.getIfSigQUnerroreds() - lastUs.getIfSigQUnerroreds());
-			double correcteds = (double) (us.getIfSigQCorrecteds() - lastUs.getIfSigQCorrecteds());
-			double uncorrectables = (double) (us.getIfSigQUncorrectables() - lastUs.getIfSigQUncorrectables());
+//			UpstreamChannel lastUs = getUpstreamChannel(us.getIfIndex(), cmts.getCmtsId());
+//			if (lastUs == null)
+//				lastUs = new UpstreamChannel();
+//			double unerroreds = (double) (us.getIfSigQUnerroreds() - lastUs.getIfSigQUnerroreds());
+//			double correcteds = (double) (us.getIfSigQCorrecteds() - lastUs.getIfSigQCorrecteds());
+//			double uncorrectables = (double) (us.getIfSigQUncorrectables() - lastUs.getIfSigQUncorrectables());
+			
+			double total = us.getIfSigQCorrecteds() + us.getIfSigQUncorrectables() + us.getIfSigQUnerroreds(); 
 
-			double fecCorrected = (correcteds / (unerroreds + correcteds + uncorrectables)) * 100;
-			double fecUncorrectable = (uncorrectables / (unerroreds + correcteds + uncorrectables)) * 100;
+			double fecCorrected = (us.getIfSigQCorrecteds() / total) * 100;
+			double fecUncorrectable = (us.getIfSigQUncorrectables() / total) * 100;
 
 			if (us.getIfSigQCorrecteds() == 0)
 				fecCorrected = 0;
@@ -485,9 +475,13 @@ public class UpstreamThread extends AbstractCmtsThread {
 				log("error when finish: " + e.getMessage());
 			} finally {
 				finished = true;
-
+				releaseCouter();
 				if (event.getUserObject() != null) {
-					((UpstreamThread) event.getUserObject()).releaseCouter();
+					try {
+						((SnmpHelper) event.getUserObject()).close();
+					} catch (IOException e) {
+						_LOGGER.error("Error when close SnmpHelper	", e);
+					}
 				}
 			}
 

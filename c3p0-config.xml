@@ -1,13 +1,9 @@
 <c3p0-config>
   <default-config>
-    <!-- <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
-    <property name="jdbcUrl">jdbc:oracle:thin:@192.168.88.44:1521:db01</property>
-    <property name="user">nvasgate</property>
-    <property name="password">nms123</property> -->
     <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
-    <property name="jdbcUrl">jdbc:oracle:thin:@192.168.88.44:1521:db01</property>
-    <property name="user">nvasgate</property>
-    <property name="password">nms123</property>
+    <property name="jdbcUrl">jdbc:oracle:thin:@172.20.6.6:1521:CTI</property>
+    <property name="user">cmts</property>
+    <property name="password">cmts</property>
     <property name="maxPoolSize">6</property>
     <property name="minPoolSize">2</property>
     <property name="initialPoolSize">2</property>
@@ -15,10 +11,10 @@
     <property name="maxIdleTimeExcessConnections">15</property>
     <property name="maxIdleTime">30</property>
     <property name="maxConnectionAge">60</property>
-    <property name="maxStatementsPerConnection">50</property>
+    <property name="maxStatementsPerConnection">180</property>
     <property name="acquireIncrement">1</property>
     <property name="numHelperThreads">20</property>
-    <property name="testConnectionOnCheckout">false</property>
+    <property name="testConnectionOnCheckout">true</property>
     <property name="testConnectionOnCheckin">true</property>
     <property name="checkoutTimeout">30000</property>
     <property name="preferredTestQuery">Select 1 From dual</property>

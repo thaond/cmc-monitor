@@ -66,8 +66,19 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 			cpds.setAcquireIncrement(dbAcquireIncrement);
 			cpds.setMaxPoolSize(dbMaxPoolSize);
 			cpds.setMaxStatements(dbMaxStatements);
+			cpds.setAutoCommitOnClose(true);
+			cpds.setTestConnectionOnCheckin(true);
+			cpds.setTestConnectionOnCheckout(true);
+			cpds.setPreferredTestQuery("SELECT 1 FROM DUAL");
+			cpds.setNumHelperThreads(6);
+			cpds.setUnreturnedConnectionTimeout(3600);
+			cpds.setMaxIdleTimeExcessConnections(300);
+			cpds.setMaxIdleTime(3600);
+			
 		}
 	}
+	
+	
 	
 	@Override
 	public Connection getConnection() {
@@ -78,6 +89,12 @@ public abstract class AbstractCmtsThread extends ManageableThread {
 			log("Error when getConnection() - ErrorMessage: " + e.getMessage());
 			throw new RuntimeException(e);
 		}
+	}
+	
+	@Override
+	protected void afterSession() throws Exception {
+		super.afterSession();
+		//cpds.close();
 	}
 
 	@Override

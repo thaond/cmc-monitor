@@ -14,6 +14,7 @@ import java.util.Vector;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.apache.log4j.Logger;
+import org.snmp4j.Session;
 import org.snmp4j.event.ResponseEvent;
 import org.snmp4j.smi.OID;
 import org.snmp4j.util.TableEvent;
@@ -64,7 +65,7 @@ public class CableModemThread extends AbstractCmtsThread {
 	private Queue<CableModem> insertCableModemQueue = new ConcurrentLinkedQueue<CableModem>();
 	private Queue<CableModem> insertCableModemHistoryQueue = new ConcurrentLinkedQueue<CableModem>();
 
-	private Map<String, CableModem> cableModemMap;
+	//private Map<String, CableModem> cableModemMap;
 
 	private static OID[] OID_COLUMNS = { new OID(OIdConstants.CmMacAddress), new OID(OIdConstants.CmDcIfIndex),
 			new OID(OIdConstants.CmUcIfIndex), new OID(OIdConstants.CmUsSnr), new OID(OIdConstants.CmUnerroreds),
@@ -75,13 +76,12 @@ public class CableModemThread extends AbstractCmtsThread {
 	protected void processSession() throws Exception {
 		log("Load all cmts entry - time: " + System.currentTimeMillis());
 		List<Cmts> cmtses = getCmtses();
-		if (usingCache) {
-			log("Load all cable modem for caching! - Time: " + System.currentTimeMillis());
-			cableModemMap = getAllCableModem();
-		}
+//		if (usingCache) {
+//			log("Load all cable modem for caching! - Time: " + System.currentTimeMillis());
+//			cableModemMap = getAllCableModem();
+//		}
 
 		// Resource here ... fuck you for reading this.
-		List<SnmpHelper> snmpHelpers = new ArrayList<SnmpHelper>();
 		long startTime = System.currentTimeMillis();
 
 		synchronized (this) {
@@ -89,11 +89,10 @@ public class CableModemThread extends AbstractCmtsThread {
 				if (cmts.isEnable()) {
 					try {
 						SnmpHelper helper = new SnmpHelper(cmts.getHost(), cmts.getCommunity());
-						snmpHelpers.add(helper);
 						acquireCounter();
 
 						log("Start process cmts \'" + cmts.getTitle() + "\' - time: " + System.currentTimeMillis());
-						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new CableModelListener(cmts), this);
+						SnmpUtils.getTables(helper.getTarget(), helper.getSession(), OID_COLUMNS, new CableModelListener(cmts), helper);
 					} catch (Exception e) {
 						_LOGGER.error("Error when start process cmts" + cmts.getTitle(), e);
 						log("Error when start process cmts, check log file for detail, errorMessage: " + e.getMessage());
@@ -105,17 +104,7 @@ public class CableModemThread extends AbstractCmtsThread {
 
 		// waiting for all crowler finish
 		while (numberOfThread > 0) {
-			
-		}
-
-		// release helpers
-		for (SnmpHelper helper : snmpHelpers) {
-			try {
-				helper.close();
-			} catch (IOException e) {
-				_LOGGER.error("Error when close main helper " + helper.toString(), e);
-				log("Error when close main helper " + helper.toString());
-			}
+			// Waiting for all spyder finished.
 		}
 		long finishTime = System.currentTimeMillis();
 		log("Finish getting all cable model info in " + (finishTime - startTime) + " ms");
@@ -160,7 +149,7 @@ public class CableModemThread extends AbstractCmtsThread {
 
 		// Caculate FECs
 
-		CableModem lastCm = null;
+		/*CableModem lastCm = null;
 
 		if (usingCache) {
 			lastCm = cableModemMap.get(cm.getMacAddress());
@@ -176,12 +165,13 @@ public class CableModemThread extends AbstractCmtsThread {
 		double unerroreds = (double) (cm.getUnerroreds() - lastCm.getUnerroreds());
 		double correcteds = (double) (cm.getCorrecteds() - lastCm.getCorrecteds());
 		double uncorrectables = (double) (cm.getUncorrectables() - lastCm.getUncorrectables());
-
-		double fecCorrected = (correcteds / (unerroreds + correcteds + uncorrectables)) * 100;
-		double fecUncorrectable = (uncorrectables / (unerroreds + correcteds + uncorrectables)) * 100;
+*/
+		double total = cm.getCorrecteds() + cm.getUncorrectables() + cm.getUnerroreds();
+		double fecCorrected = (cm.getCorrecteds() / total) * 100;
+		double fecUncorrectable = (cm.getUncorrectables() / total) * 100;
 
 		if (fecCorrected > 1000000 || fecUncorrectable > 1000000) {
-			log("What the fuck: cm=" + cm.toString() + " lastCm = " + lastCm.toString());
+			log("What the fuck: cm=" + cm.toString());;
 		}
 
 		// validate double
@@ -504,16 +494,21 @@ public class CableModemThread extends AbstractCmtsThread {
 				try {
 					snmpHelper.close();
 				} catch (IOException e) {
-					// throw new RuntimeException(e);
+					_LOGGER.error("Cannot close SnmpHelper", e);
 				}
 			} catch (Exception e) {
 				_LOGGER.error("Error when finish", e);
 				log("error when finish: " + e.getMessage());
 			} finally {
 				finished = true;
-
+				releaseCouter();
 				if (event.getUserObject() != null) {
-					((CableModemThread) event.getUserObject()).releaseCouter();
+					try {
+						((SnmpHelper) event.getUserObject()).close();
+					} catch (Exception e) {
+						_LOGGER.error("Cannot close SnmpHelper", e);
+					}
+					
 				}
 			}
 

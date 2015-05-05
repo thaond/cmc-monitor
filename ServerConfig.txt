@@ -5,7 +5,7 @@ LoadingMethod=1
 queueServerEnable=true
 connectionFactory=30
 
-c3p0-config=E:/NMS_Work/Project/vasgate/c3p0-config.xml
+c3p0-config=/u02/projects/nms/cmc_monitor/c3p0-config.xml
 
 queue.factory=jms/CCS
 queue.connection=dedicated
