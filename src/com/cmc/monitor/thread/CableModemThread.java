@@ -159,6 +159,7 @@ public class CableModemThread extends AbstractCmtsThread {
 	}
 
 	protected CableModem getCableModem(String macAdress) {
+		
 		CableModem cm = null;
 
 		if (usingCache) { // Load from cache
@@ -281,7 +282,7 @@ public class CableModemThread extends AbstractCmtsThread {
 		updateCableModemToDB(cmts, true);
 	}
 
-	protected void insertCableModemToDB(Cmts cmts, boolean finished) {
+	protected synchronized void insertCableModemToDB(Cmts cmts, boolean finished) {
 		if (finished) {
 			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertCableModem)) {
 
@@ -327,7 +328,7 @@ public class CableModemThread extends AbstractCmtsThread {
 		}
 	}
 
-	protected void insertCableModemHistoryToDB(Cmts cmts, boolean finished) {
+	protected synchronized void insertCableModemHistoryToDB(Cmts cmts, boolean finished) {
 		if (finished) {
 			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertCableModemHistory)) {
 
@@ -368,12 +369,11 @@ public class CableModemThread extends AbstractCmtsThread {
 				_LOGGER.error("Error when trying insert CableModemHistories for cmts \'" + cmts.getTitle() + "\'.", e);
 				log("Error when trying insert CableModemHistories for cmts \'" + cmts.getTitle()
 						+ "\'. Check log for detail - ErrorMessage: " + e.getMessage());
-				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}
 
-	protected void updateCableModemToDB(Cmts cmts, boolean finished) {
+	protected synchronized void updateCableModemToDB(Cmts cmts, boolean finished) {
 		if (finished) {
 
 			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlUpdateCableModem)) {
@@ -416,7 +416,6 @@ public class CableModemThread extends AbstractCmtsThread {
 				_LOGGER.error("Error when trying update CableModems for cmts \'" + cmts.getTitle() + "\'.", e);
 				log("Error when trying update CableModems for cmts \'" + cmts.getTitle() + "\'. Check log for detail - ErrorMessage: "
 						+ e.getMessage());
-				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}

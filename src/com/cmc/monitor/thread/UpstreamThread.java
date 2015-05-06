@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -186,19 +187,14 @@ public class UpstreamThread extends AbstractCmtsThread {
 		insertUpstreamChannelHistoryToDb(finished, cmts);
 	}
 
-	protected void insertUpstreamChannelToDb(boolean finished, Cmts cmts) {
-		if (insertUpstreamChannelQueue.size() == batchSize || finished) {
-			List<UpstreamChannel> ups = new ArrayList<UpstreamChannel>();
+	protected synchronized void insertUpstreamChannelToDb(boolean finished, Cmts cmts) {
+		if (finished) {
 
-			for (int i = 0; i < batchSize; i++) {
-				UpstreamChannel us = insertUpstreamChannelQueue.poll();
-				if (us != null) {
-					ups.add(us);
-				}
-			}
+			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertUnstreamChannel)) {
+				int size = insertUpstreamChannelQueue.size();
 
-			try (PreparedStatement pstmt = getConnection().prepareStatement(sqlInsertUnstreamChannel)) {
-				for (UpstreamChannel us : ups) {
+				for (int i = 0; i < size; i++) {
+					UpstreamChannel us = insertUpstreamChannelQueue.poll();
 
 					pstmt.setInt(1, us.getIfIndex()); // ifIndex,
 					pstmt.setLong(2, us.getCmtsId());// cmtsId,
@@ -224,37 +220,33 @@ public class UpstreamThread extends AbstractCmtsThread {
 					pstmt.setString(22, us.getIfDesc());// ifDesc
 
 					pstmt.addBatch();
+
+					if (i % batchSize == i && i < size - 1) {
+						pstmt.executeBatch();
+					}
 				}
 
 				pstmt.executeBatch();
-				DbUtil.commitConnection(conn);
-				if (finished) {
-					// log("Add UpstreamChannel of cmtsId " + cmts.getCmtsId() +
-					// " has been insert - time: " +
-					// System.currentTimeMillis());
-				}
+
 			} catch (SQLException e) {
 				_LOGGER.error("Error when insert upstream channel", e);
 				log("Error when insert upstream channel: " + e.getMessage());
-				DbUtil.rollbackConnection(conn);
 			}
 		}
 
 	}
 
-	protected void updateUpstreamChannelToDb(boolean finished, Cmts cmts) {
-		if (updateUpstreamChannelQueue.size() == batchSize || finished) {
-			List<UpstreamChannel> ups = new ArrayList<UpstreamChannel>();
+	protected  synchronized void updateUpstreamChannelToDb(boolean finished, Cmts cmts) {
 
-			for (int i = 0; i < batchSize; i++) {
-				UpstreamChannel us = updateUpstreamChannelQueue.poll();
-				if (us != null) {
-					ups.add(us);
-				}
-			}
+		if (finished) {
 
-			try (PreparedStatement pstmt = getConnection().prepareStatement(sqlUpdateUpstreamChannel)) {
-				for (UpstreamChannel us : ups) {
+			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlUpdateUpstreamChannel)) {
+
+				int size = updateUpstreamChannelQueue.size();
+
+				for (int i = 0; i < size; i++) {
+
+					UpstreamChannel us = updateUpstreamChannelQueue.poll();
 
 					pstmt.setString(1, us.getQam()); // qam,
 					pstmt.setDouble(2, us.getAvgOnlineCmDsPower()); // avgOnlineCmDsPower,
@@ -280,26 +272,23 @@ public class UpstreamThread extends AbstractCmtsThread {
 					pstmt.setLong(22, us.getCmtsId());// cmtsId,
 
 					pstmt.addBatch();
+
+					if (i % batchSize == 0 && i < size - 1) {
+						pstmt.executeBatch();
+					}
 				}
 
 				pstmt.executeBatch();
-				DbUtil.commitConnection(conn);
 
-				if (finished) {
-					// log("All UpstreamChannel of cmtsId " + cmts.getCmtsId() +
-					// " has been update - time: " +
-					// System.currentTimeMillis());
-				}
 			} catch (SQLException e) {
 				_LOGGER.error("Error when update upstream channe", e);
 				log("Error when update upstream channel: " + e.getMessage());
-				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}
 
-	protected void insertUpstreamChannelHistoryToDb(boolean finished, Cmts cmts) {
-		if (insertUpstreamChannelHistoryQueue.size() == batchSize || finished) {
+	protected synchronized void insertUpstreamChannelHistoryToDb(boolean finished, Cmts cmts) {
+		if (finished) {
 			List<UpstreamChannel> ups = new ArrayList<UpstreamChannel>();
 
 			for (int i = 0; i < batchSize; i++) {
@@ -309,8 +298,14 @@ public class UpstreamThread extends AbstractCmtsThread {
 				}
 			}
 
-			try (PreparedStatement pstmt = getConnection().prepareStatement(sqlInsertUpstreamChannelHistory)) {
-				for (UpstreamChannel us : ups) {
+			try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sqlInsertUpstreamChannelHistory)) {
+
+				int size = insertUpstreamChannelHistoryQueue.size();
+
+				for (int i = 0; i < size; i++) {
+
+					UpstreamChannel us = insertUpstreamChannelHistoryQueue.poll();
+
 					pstmt.setInt(1, us.getIfIndex()); // ifIndex,
 					pstmt.setLong(2, us.getCmtsId());// cmtsId,
 					pstmt.setString(3, us.getQam()); // qam,
@@ -335,20 +330,17 @@ public class UpstreamThread extends AbstractCmtsThread {
 					pstmt.setString(22, us.getIfDesc());// ifDesc
 
 					pstmt.addBatch();
+
+					if (i % batchSize == 0 && i < size - 1) {
+						pstmt.executeBatch();
+					}
 				}
 
 				pstmt.executeBatch();
-				DbUtil.commitConnection(conn);
 
-				if (finished) {
-					// log("Add UpstreamChannelHistory of cmtsId " +
-					// cmts.getCmtsId() + " has been insert _ time: "
-					// + System.currentTimeMillis());
-				}
 			} catch (SQLException e) {
 				_LOGGER.error("Error when insert upstream channel history", e);
 				log("Error when insert upstream channel history: " + e.getMessage());
-				DbUtil.rollbackConnection(conn);
 			}
 		}
 	}
@@ -360,6 +352,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 	}
 
 	protected double[] getAvgOnlineCmPowers(int upIfIndex, long cmtsId) {
+
 		double[] results = new double[6];
 
 		Connection conn = null;
@@ -386,7 +379,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 			_LOGGER.error("Error UpstreamThread.getAvgOnlineCmPowers(" + upIfIndex + ", " + cmtsId + ")", e);
 			log("Error when getAvgOnlineCm" + e.getMessage());
 		} finally {
-			// DbUtil.closeConnection(conn);
+			DbUtil.closeConnection(conn);
 			DbUtil.closeStatement(ptst);
 			DbUtil.closeResultSet(rs);
 		}
@@ -397,8 +390,48 @@ public class UpstreamThread extends AbstractCmtsThread {
 	protected Map<String, UpstreamChannel> getAllUpstreamChannels() {
 		Map<String, UpstreamChannel> map = new HashMap<String, UpstreamChannel>();
 
-		// TODO: Query and caching all Upstream Channel to this map - key =
-		// 'ifIndex-cmtsId'
+		try (Connection conn = getConnection();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sqlGetAllUpstream)) {
+
+			if (rs.next()) {
+
+				UpstreamChannel us = new UpstreamChannel();
+
+				us.setIfDesc(rs.getString("ifDesc"));
+				us.setIfAlias(rs.getString("ifAlias"));
+				us.setIfSigQSNR(rs.getDouble("ifSigQSNR"));
+				us.setIfSigQUnerroreds(rs.getLong("ifSigQUnerroreds"));
+				us.setIfSigQCorrecteds(rs.getLong("ifSigQCorrecteds"));
+				us.setIfSigQUncorrectables(rs.getLong("ifSigQUncorrectables"));
+				us.setUpChannelWidth(rs.getLong("upChannelWidth"));
+				us.setUpChannelModProfile(rs.getInt("upChannelModProfile"));
+				us.setUpChannelCmActive(rs.getInt("upChannelCmActive"));
+				us.setUpChannelCmRegisterd(rs.getInt("upChannelCmRegistered"));
+				us.setUpChannelCmTotal(rs.getInt("upChannelCmTotal"));
+				us.setFecCorrected(rs.getDouble("fecCorrected"));
+				us.setFecUncorrectable(rs.getDouble("fecUncorrectable"));
+				us.setAvgOnlineCmDsSNR(rs.getDouble("avgOnlineCmDsSNR"));
+				us.setAvgOnlineCmRxPower(rs.getDouble("avgOnlineCmRxPower"));
+				us.setAvgOnlineCmTxPower(rs.getDouble("avgOnlineCmTxPower"));
+				us.setAvgOnlineCmDsPower(rs.getDouble("avgOnlineCmDsPower"));
+				us.setAvgOnlineCmUsPower(rs.getDouble("avgOnlineCmUsPower"));
+				us.setQam(rs.getString("qam"));
+				us.setModifiedDate(rs.getDate("modifiedDate"));
+				us.setCreateDate(rs.getDate("createDate"));
+				us.setCmtsId(rs.getLong("cmtsId"));
+				us.setIfIndex(rs.getInt("ifIndex"));
+
+				// map key
+				String key = us.getIfIndex() + "-" + us.getCmtsId();
+
+				map.put(key, us);
+			}
+
+		} catch (Exception e) {
+			_LOGGER.error("Error UpstreamThread.getAllUpstreamChannels()", e);
+			log("Error when get all UpstreamChannels - check log for detail." + e.getMessage());
+		}
 
 		return map;
 	}
@@ -416,7 +449,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 			Connection conn = null;
 			PreparedStatement ptmt = null;
 			ResultSet rs = null;
-			
+
 			try {
 				conn = getConnection();
 				ptmt = conn.prepareStatement(sqlGetUpstream);
