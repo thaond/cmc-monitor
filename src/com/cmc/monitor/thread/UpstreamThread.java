@@ -163,25 +163,29 @@ public class UpstreamThread extends AbstractCmtsThread {
 			}
 
 			// Calculate FEC
+			UpstreamChannel oldUs = getUpstreamChannel(us.getIfIndex(), us.getCmtsId());
+			if (oldUs != null) {
+				double total = (us.getIfSigQCorrecteds() - oldUs.getIfSigQCorrecteds()) + (us.getIfSigQUncorrectables() - oldUs.getIfSigQUncorrectables()) + (us.getIfSigQUnerroreds() - oldUs.getIfSigQUnerroreds());
 
-			double total = us.getIfSigQCorrecteds() + us.getIfSigQUncorrectables() + us.getIfSigQUnerroreds();
+				double fecCorrected = ((us.getIfSigQCorrecteds() - oldUs.getIfSigQCorrecteds()) / total) * 100;
+				double fecUncorrectable = ((us.getIfSigQUncorrectables() - oldUs.getIfSigQUncorrectables()) / total) * 100;
 
-			double fecCorrected = (us.getIfSigQCorrecteds() / total) * 100;
-			double fecUncorrectable = (us.getIfSigQUncorrectables() / total) * 100;
+				if ((us.getIfSigQCorrecteds() - oldUs.getIfSigQCorrecteds()) == 0)
+					fecCorrected = 0;
+				if ((us.getIfSigQUncorrectables() - oldUs.getIfSigQUncorrectables()) == 0)
+					fecUncorrectable = 0;
 
-			if (us.getIfSigQCorrecteds() == 0)
-				fecCorrected = 0;
-			if (us.getIfSigQUncorrectables() == 0)
-				fecUncorrectable = 0;
+				// validate doubles
+				if (Double.isNaN(fecCorrected) || Double.isInfinite(fecCorrected))
+					fecCorrected = 0;
+				if (Double.isNaN(fecUncorrectable) || Double.isInfinite(fecUncorrectable))
+					fecUncorrectable = 0;
 
-			// validate doubles
-			if (Double.isNaN(fecCorrected) || Double.isInfinite(fecCorrected))
-				fecCorrected = 0;
-			if (Double.isNaN(fecUncorrectable) || Double.isInfinite(fecUncorrectable))
-				fecUncorrectable = 0;
+				us.setFecCorrected(fecCorrected);
+				us.setFecUncorrectable(fecUncorrectable);
+			}
 
-			us.setFecCorrected(fecCorrected);
-			us.setFecUncorrectable(fecUncorrectable);
+			
 
 			// Calculate AVG Powers
 			double[] avgValues = getAvgOnlineCmPowers(us.getIfIndex(), cmts.getCmtsId());

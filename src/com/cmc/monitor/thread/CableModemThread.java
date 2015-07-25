@@ -163,14 +163,11 @@ public class CableModemThread extends AbstractCmtsThread {
 		}
 
 		// Caculate FECs
-		double total = cm.getCorrecteds() + cm.getUncorrectables() + cm.getUnerroreds();
-		double fecCorrected = (cm.getCorrecteds() / total) * 100;
-		double fecUncorrectable = (cm.getUncorrectables() / total) * 100;
-
-		if (fecCorrected > 1000000 || fecUncorrectable > 1000000) {
-			log("What the fuck: cm=" + cm.toString());
-			;
-		}
+		CableModem oldCm = getCableModem(cm.getMacAddress());
+		
+		double total = (cm.getCorrecteds() - oldCm.getCorrecteds()) + (cm.getUncorrectables() - oldCm.getUncorrectables()) + (cm.getUnerroreds() - oldCm.getUnerroreds());
+		double fecCorrected = ((cm.getCorrecteds() - oldCm.getCorrecteds()) / total) * 100;
+		double fecUncorrectable = ((cm.getUncorrectables() - oldCm.getUncorrectables()) / total) * 100;
 
 		// validate double
 		if (Double.isNaN(fecCorrected) || Double.isInfinite(fecCorrected))
