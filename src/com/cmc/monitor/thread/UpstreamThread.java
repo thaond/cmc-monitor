@@ -189,7 +189,6 @@ public class UpstreamThread extends AbstractCmtsThread {
 
 			// Calculate AVG Powers
 			double[] avgValues = getAvgOnlineCmPowers(us.getIfIndex(), cmts.getCmtsId());
-
 			us.setAvgOnlineCmMicRef(avgValues[0]);
 			us.setAvgOnlineCmRxPower(avgValues[1]);
 			us.setAvgOnlineCmTxPower(avgValues[2]);
@@ -248,6 +247,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 					pstmt.setDouble(20, us.getIfSigQSNR());// ifSigQSNR,
 					pstmt.setString(21, us.getIfAlias());// ifAlias,
 					pstmt.setString(22, us.getIfDesc());// ifDesc
+					pstmt.setDouble(23, us.getAvgOnlineCmMicRef()); // avgOnlineCmMicRef
 
 					pstmt.addBatch();
 
@@ -298,8 +298,10 @@ public class UpstreamThread extends AbstractCmtsThread {
 					pstmt.setDouble(18, us.getIfSigQSNR());// ifSigQSNR,
 					pstmt.setString(19, us.getIfAlias());// ifAlias,
 					pstmt.setString(20, us.getIfDesc());// ifDesc
-					pstmt.setInt(21, us.getIfIndex()); // ifIndex,
-					pstmt.setLong(22, us.getCmtsId());// cmtsId,
+					pstmt.setDouble(21, us.getAvgOnlineCmMicRef()); //avgOnlineCmMicRef
+					pstmt.setInt(22, us.getIfIndex()); // ifIndex,
+					pstmt.setLong(23, us.getCmtsId());// cmtsId,
+					
 
 					pstmt.addBatch();
 
@@ -349,6 +351,7 @@ public class UpstreamThread extends AbstractCmtsThread {
 					pstmt.setDouble(20, us.getIfSigQSNR());// ifSigQSNR,
 					pstmt.setString(21, us.getIfAlias());// ifAlias,
 					pstmt.setString(22, us.getIfDesc());// ifDesc
+					pstmt.setDouble(23, us.getAvgOnlineCmMicRef());
 
 					pstmt.addBatch();
 

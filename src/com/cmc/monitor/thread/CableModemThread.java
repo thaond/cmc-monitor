@@ -164,19 +164,20 @@ public class CableModemThread extends AbstractCmtsThread {
 
 		// Caculate FECs
 		CableModem oldCm = getCableModem(cm.getMacAddress());
-		
-		double total = (cm.getCorrecteds() - oldCm.getCorrecteds()) + (cm.getUncorrectables() - oldCm.getUncorrectables()) + (cm.getUnerroreds() - oldCm.getUnerroreds());
-		double fecCorrected = ((cm.getCorrecteds() - oldCm.getCorrecteds()) / total) * 100;
-		double fecUncorrectable = ((cm.getUncorrectables() - oldCm.getUncorrectables()) / total) * 100;
+		if (oldCm != null) {
+			double total = (cm.getCorrecteds() - oldCm.getCorrecteds()) + (cm.getUncorrectables() - oldCm.getUncorrectables()) + (cm.getUnerroreds() - oldCm.getUnerroreds());
+			double fecCorrected = ((cm.getCorrecteds() - oldCm.getCorrecteds()) / total) * 100;
+			double fecUncorrectable = ((cm.getUncorrectables() - oldCm.getUncorrectables()) / total) * 100;
 
-		// validate double
-		if (Double.isNaN(fecCorrected) || Double.isInfinite(fecCorrected))
-			fecCorrected = 0;
-		if (Double.isNaN(fecUncorrectable) || Double.isInfinite(fecUncorrectable))
-			fecUncorrectable = 0;
+			// validate double
+			if (Double.isNaN(fecCorrected) || Double.isInfinite(fecCorrected))
+				fecCorrected = 0;
+			if (Double.isNaN(fecUncorrectable) || Double.isInfinite(fecUncorrectable))
+				fecUncorrectable = 0;
 
-		cm.setFecCorrected(fecCorrected);
-		cm.setFecUncorrectable(fecUncorrectable);
+			cm.setFecCorrected(fecCorrected);
+			cm.setFecUncorrectable(fecUncorrectable);
+		}
 
 		// update to database
 		upsertCableModemToDb(cm, finished, cmts);
